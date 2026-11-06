@@ -1,0 +1,34 @@
+{
+ "taille_image": [
+  64,
+  64
+ ],
+ "note": "vue de dessus, tournee vers la droite : faire pivoter le noeud dans Godot",
+ "animations": [
+  {
+   "nom": "repos",
+   "ligne": 0,
+   "images": 2
+  },
+  {
+   "nom": "attaque",
+   "ligne": 1,
+   "images": 3
+  },
+  {
+   "nom": "appel",
+   "ligne": 2,
+   "images": 4
+  },
+  {
+   "nom": "etourdie",
+   "ligne": 3,
+   "images": 4
+  },
+  {
+   "nom": "vaincue",
+   "ligne": 4,
+   "images": 3
+  }
+ ]
+}

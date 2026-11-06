@@ -1,0 +1,29 @@
+{
+ "taille_image": [
+  32,
+  32
+ ],
+ "note": "vue de dessus, tournee vers la droite : faire pivoter le noeud dans Godot",
+ "animations": [
+  {
+   "nom": "marche",
+   "ligne": 0,
+   "images": 4
+  },
+  {
+   "nom": "morsure",
+   "ligne": 1,
+   "images": 3
+  },
+  {
+   "nom": "crachat",
+   "ligne": 2,
+   "images": 3
+  },
+  {
+   "nom": "etourdie",
+   "ligne": 3,
+   "images": 4
+  }
+ ]
+}
