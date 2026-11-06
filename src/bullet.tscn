@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ctm1itnxrvbja"]
+
+[node name="bullet" type="Node2D" unique_id=244968278]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1367285573]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1992220712]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1658475579]

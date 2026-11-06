@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bjf7xist8d0g8" path="res://assets/images/enfant.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://wtmwyalom35j" path="res://scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://hb2e0oodqb8r" path="res://scripts/state_machine.gd" id="2_sm"]
+[ext_resource type="Script" uid="uid://da4pjn847fgvg" path="res://scripts/states/player_idle.gd" id="3_idle"]
+[ext_resource type="Script" uid="uid://jxt28wobdplp" path="res://scripts/states/player_walk.gd" id="4_walk"]
+[ext_resource type="Script" uid="uid://dnage2fclw8ph" path="res://scripts/states/player_attack.gd" id="5_attack"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
@@ -308,7 +312,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attack_down",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -323,9 +327,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6ct3r")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack_left",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -340,9 +344,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k85er")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack_right",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -357,9 +361,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_76bt2")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack_up",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -376,7 +380,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"bless",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -399,7 +403,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"death",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -416,7 +420,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle_down",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -433,7 +437,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle_left",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -450,7 +454,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle_right",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -467,7 +471,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle_up",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -488,9 +492,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tqjdw")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"roll_right",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -513,7 +517,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk_down",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -536,7 +540,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk_left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -559,7 +563,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk_right",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -582,14 +586,35 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk_up",
-"speed": 5.0
+"speed": 10.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pieds"]
+size = Vector2(16, 10)
 
 [node name="Player" type="CharacterBody2D" unique_id=1708040358]
 script = ExtResource("1_kpjcp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1318698156]
 sprite_frames = SubResource("SpriteFrames_dctbr")
-animation = &"attack_down"
-frame = 3
-frame_progress = 1.0
+animation = &"idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=966959199]
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_pieds")
+
+[node name="StateMachine" type="Node" parent="." unique_id=459103278 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_sm")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1548222534 node_paths=PackedStringArray("player")]
+script = ExtResource("3_idle")
+player = NodePath("../..")
+
+[node name="Walk" type="Node" parent="StateMachine" unique_id=1713254363 node_paths=PackedStringArray("player")]
+script = ExtResource("4_walk")
+player = NodePath("../..")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=2061536555 node_paths=PackedStringArray("player")]
+script = ExtResource("5_attack")
+player = NodePath("../..")
