@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://da4pjn847fgvg" path="res://scripts/states/player_idle.gd" id="3_idle"]
 [ext_resource type="Script" uid="uid://jxt28wobdplp" path="res://scripts/states/player_walk.gd" id="4_walk"]
 [ext_resource type="Script" uid="uid://dnage2fclw8ph" path="res://scripts/states/player_attack.gd" id="5_attack"]
+[ext_resource type="PackedScene" uid="uid://ctm1itnxrvbja" path="res://bullet.tscn" id="6_bullet"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
@@ -594,6 +595,7 @@ size = Vector2(16, 10)
 
 [node name="Player" type="CharacterBody2D" unique_id=1708040358]
 script = ExtResource("1_kpjcp")
+bullet_scene = ExtResource("6_bullet")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1318698156]
 sprite_frames = SubResource("SpriteFrames_dctbr")
@@ -602,6 +604,11 @@ animation = &"idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=966959199]
 position = Vector2(0, 18)
 shape = SubResource("RectangleShape2D_pieds")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, 20)
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="StateMachine" type="Node" parent="." unique_id=459103278 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_sm")

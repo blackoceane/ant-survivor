@@ -15,7 +15,7 @@ func update(_delta : float) -> void:
 	var dir := manage_input()
 
 	if dir.length() > 0 :
-		if Input.is_action_just_pressed("attack") and not player.is_attacking:
+		if Input.is_action_just_pressed("attack") and player.can_shoot():
 			Transitioned.emit(self, "Attack")
 		else:
 			player.velocity = dir * move_speed

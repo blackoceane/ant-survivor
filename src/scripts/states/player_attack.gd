@@ -3,9 +3,8 @@ class_name PlayerAttack
 
 @export var player : Player
 
-const GRAINE = preload("res://graine.tscn")
 
-var direction_tir : Vector2   # le sens de l'animation choisie (haut, bas, gauche ou droite)
+var direction_tir : Vector2  
 
 # 1 fois en entrant : on s'arrête, on tire, on écoute la fin de l'animation
 func enter():
@@ -25,24 +24,22 @@ func enter():
 	else:
 		player.anim.play("attack_down")
 		direction_tir = Vector2.DOWN
+
+	# Le Muzzle (point de tir) se place devant l'enfant et pointe dans le sens du tir
+	var muzzle : Marker2D = player.get_node("Muzzle")
+	muzzle.position = Vector2(0, 6) + direction_tir * 14
+	muzzle.rotation = direction_tir.angle()
+
 	player.anim.animation_finished.connect(_on_attack_finished)
 
 # 1 fois en sortant : on arrête d'écouter
 func exit():
 	player.anim.animation_finished.disconnect(_on_attack_finished)
 
-# Fait apparaître une graine devant l'enfant
-func tirer_graine():
-	var graine = GRAINE.instantiate()
-	graine.direction = direction_tir
-	# d'abord l'ajouter à la scène, ENSUITE la placer (sinon le décalage du parent compte deux fois)
-	player.get_parent().add_child(graine)
-	# part de la main : un peu devant l'enfant, à hauteur de la poitrine
-	graine.global_position = player.global_position + Vector2(0, 6) + direction_tir * 14
 
 # Appelée par Godot quand l'animation est finie
 # (AnimatedSprite2D : pas de paramètre anim_name, contrairement à AnimationPlayer)
 func _on_attack_finished() -> void:
 	print("Tir !")
-	tirer_graine()
+	player.shoot()  
 	Transitioned.emit(self, "Idle")

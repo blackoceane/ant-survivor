@@ -1,9 +1,22 @@
 [gd_scene format=3 uid="uid://ctm1itnxrvbja"]
 
+[ext_resource type="Script" uid="uid://duptxebtav643" path="res://bullet.gd" id="1_bullet"]
+[ext_resource type="Texture2D" uid="uid://cewwiq3aqmwfg" path="res://assets/images/projectiles.png" id="2_tex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_graine"]
+radius = 3.0
+
 [node name="bullet" type="Node2D" unique_id=244968278]
+script = ExtResource("1_bullet")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1367285573]
+texture = ExtResource("2_tex")
+region_enabled = true
+region_rect = Rect2(8, 8, 16, 16)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1992220712]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1658475579]
+shape = SubResource("CircleShape2D_graine")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

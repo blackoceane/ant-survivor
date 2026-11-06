@@ -9,7 +9,7 @@ func manage_input() -> void:
 	if (dir.length() > 0):
 		Transitioned.emit(self, "Walk")
 
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and player.can_shoot():
 		Transitioned.emit(self, "Attack")
 
 func enter():
