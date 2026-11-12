@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2ac0bwgjeva4"]
 
-[ext_resource type="Texture2D" uid="uid://bjf7xist8d0g8" path="res://assets/images/enfant.png" id="1_f50pn"]
+[ext_resource type="Texture2D" uid="uid://bjf7xist8d0g8" path="res://assets/images/personnages/enfant.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://wtmwyalom35j" path="res://scripts/player.gd" id="1_kpjcp"]
 [ext_resource type="Script" uid="uid://hb2e0oodqb8r" path="res://scripts/state_machine.gd" id="2_sm"]
 [ext_resource type="Script" uid="uid://da4pjn847fgvg" path="res://scripts/states/player_idle.gd" id="3_idle"]

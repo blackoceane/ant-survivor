@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://dher72fo0qaa8"]
+
+[ext_resource type="Script" path="res://scripts/jardin.gd" id="1_qea06"]
+[ext_resource type="Texture2D" path="res://assets/images/jardin_fond.png" id="2_11f8t"]
+[ext_resource type="Texture2D" path="res://assets/images/herbe_premier_plan.png" id="3_r7mvx"]
+[ext_resource type="Texture2D" path="res://assets/images/soleil.png" id="4_mrl6t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noapr"]
+size = Vector2(1736, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scudk"]
+size = Vector2(1736, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0qsy"]
+size = Vector2(32, 941)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lexlw"]
+size = Vector2(32, 941)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbsbo"]
+radius = 45.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7whqv"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_urv23"]
+offsets = PackedFloat32Array(0, 0.2, 0.8, 1)
+colors = PackedColorArray(1, 0.9, 0.45, 0, 1, 0.92, 0.5, 0.9, 1, 0.92, 0.5, 0.9, 1, 0.95, 0.6, 0)
+
+[node name="Jardin" type="Node2D" unique_id=608627986]
+y_sort_enabled = true
+script = ExtResource("1_qea06")
+
+[node name="Fond" type="Sprite2D" parent="." unique_id=1278675755]
+z_index = -2
+texture = ExtResource("2_11f8t")
+centered = false
+
+[node name="Obstacles" type="StaticBody2D" parent="." unique_id=141167544]
+
+[node name="rocher_gauche" type="CollisionPolygon2D" parent="Obstacles" unique_id=2044411628]
+polygon = PackedVector2Array(250, 420, 237.62111, 465.5578, 202.93622, 502.09232, 152.81512, 522.36743, 97.18488, 522.36743, 47.063774, 502.09232, 12.378891, 465.5578, 0, 420, 12.378891, 374.4422, 47.063774, 337.90768, 97.18488, 317.63257, 152.81512, 317.63257, 202.93622, 337.90768, 237.62111, 374.4422)
+
+[node name="rocher_bas_gauche" type="CollisionPolygon2D" parent="Obstacles" unique_id=1056096307]
+polygon = PackedVector2Array(230, 830, 216.6308, 879.8966, 179.17111, 919.91064, 125.04033, 942.1167, 64.95967, 942.1167, 10.82888, 919.91064, -26.630798, 879.8966, -40, 830, -26.630798, 780.1034, 10.82888, 740.08936, 64.95967, 717.8833, 125.04033, 717.8833, 179.17111, 740.08936, 216.6308, 780.1034)
+
+[node name="rocher_haut_droite" type="CollisionPolygon2D" parent="Obstacles" unique_id=847155045]
+polygon = PackedVector2Array(1680, 105, 1668.1162, 148.38837, 1634.8187, 183.18315, 1586.7025, 202.4928, 1533.2975, 202.4928, 1485.1813, 183.18315, 1451.8838, 148.38837, 1440, 105, 1451.8838, 61.611626, 1485.1813, 26.816849, 1533.2975, 7.50721, 1586.7025, 7.50721, 1634.8187, 26.816849, 1668.1162, 61.611626)
+
+[node name="rocher_droite" type="CollisionPolygon2D" parent="Obstacles" unique_id=1844279331]
+polygon = PackedVector2Array(1685, 515, 1675.0969, 556.21893, 1647.349, 589.274, 1607.2521, 607.61816, 1562.7479, 607.61816, 1522.651, 589.274, 1494.9031, 556.21893, 1485, 515, 1494.9031, 473.78104, 1522.651, 440.726, 1562.7479, 422.38184, 1607.2521, 422.38184, 1647.349, 440.726, 1675.0969, 473.78104)
+
+[node name="rocher_bas_droite" type="CollisionPolygon2D" parent="Obstacles" unique_id=1593934097]
+polygon = PackedVector2Array(1685, 835, 1678.0679, 871.8801, 1658.6443, 901.4557, 1630.5764, 917.8689, 1599.4236, 917.8689, 1571.3557, 901.4557, 1551.9321, 871.8801, 1545, 835, 1551.9321, 798.1199, 1571.3557, 768.5443, 1599.4236, 752.1311, 1630.5764, 752.1311, 1658.6443, 768.5443, 1678.0679, 798.1199)
+
+[node name="caillou_haut" type="CollisionPolygon2D" parent="Obstacles" unique_id=1389039525]
+polygon = PackedVector2Array(573, 132, 568.2465, 145.88428, 554.9275, 157.01862, 535.681, 163.1977, 514.319, 163.1977, 495.07248, 157.01862, 481.75348, 145.88428, 477, 132, 481.75348, 118.11572, 495.07248, 106.98139, 514.319, 100.80231, 535.681, 100.80231, 554.9275, 106.98139, 568.2465, 118.11572)
+
+[node name="caillou_1" type="CollisionPolygon2D" parent="Obstacles" unique_id=352823852]
+polygon = PackedVector2Array(986, 588, 980.2562, 605.35535, 964.1624, 619.27325, 940.9062, 626.99713, 915.0938, 626.99713, 891.8376, 619.27325, 875.7438, 605.35535, 870, 588, 875.7438, 570.64465, 891.8376, 556.72675, 915.0938, 549.00287, 940.9062, 549.00287, 964.1624, 556.72675, 980.2562, 570.64465)
+
+[node name="caillou_2" type="CollisionPolygon2D" parent="Obstacles" unique_id=1407697380]
+polygon = PackedVector2Array(1363, 598, 1355.2756, 617.5248, 1333.6322, 633.18243, 1302.3567, 641.87177, 1267.6433, 641.87177, 1236.3678, 633.18243, 1214.7244, 617.5248, 1207, 598, 1214.7244, 578.4752, 1236.3678, 562.81757, 1267.6433, 554.12823, 1302.3567, 554.12823, 1333.6322, 562.81757, 1355.2756, 578.4752)
+
+[node name="caillou_3" type="CollisionPolygon2D" parent="Obstacles" unique_id=243517634]
+polygon = PackedVector2Array(1435, 545, 1430.5436, 560.1859, 1418.057, 572.3641, 1400.0134, 579.1225, 1379.9866, 579.1225, 1361.943, 572.3641, 1349.4564, 560.1859, 1345, 545, 1349.4564, 529.8141, 1361.943, 517.6359, 1379.9866, 510.87753, 1400.0134, 510.87753, 1418.057, 517.6359, 1430.5436, 529.8141)
+
+[node name="marguerite" type="CollisionPolygon2D" parent="Obstacles" unique_id=2103122555]
+polygon = PackedVector2Array(1395, 235, 1378.6599, 293.5743, 1332.8759, 340.54724, 1266.716, 366.61526, 1193.284, 366.61526, 1127.1241, 340.54724, 1081.3401, 293.5743, 1065, 235, 1081.3401, 176.42569, 1127.1241, 129.45276, 1193.284, 103.384735, 1266.716, 103.384735, 1332.8759, 129.45276, 1378.6599, 176.42569)
+
+[node name="grande_feuille" type="CollisionPolygon2D" parent="Obstacles" unique_id=2083436484]
+polygon = PackedVector2Array(1665, 285, 1654.6017, 317.5413, 1625.4664, 343.63736, 1583.3647, 358.1196, 1536.6353, 358.1196, 1494.5336, 343.63736, 1465.3983, 317.5413, 1455, 285, 1465.3983, 252.45872, 1494.5336, 226.36264, 1536.6353, 211.8804, 1583.3647, 211.8804, 1625.4664, 226.36264, 1654.6017, 252.45872)
+
+[node name="fourmiliere" type="CollisionPolygon2D" parent="Obstacles" unique_id=2094616766]
+polygon = PackedVector2Array(970, 55, 953.65985, 89.7107, 907.8758, 117.546524, 841.71594, 132.99423, 768.28406, 132.99423, 702.1242, 117.546524, 656.34015, 89.7107, 640, 55, 656.34015, 20.289299, 702.1242, -7.54652, 768.28406, -22.994232, 841.71594, -22.994232, 907.8758, -7.54652, 953.65985, 20.289299)
+
+[node name="herbe_haut_gauche" type="CollisionPolygon2D" parent="Obstacles" unique_id=1625740517]
+polygon = PackedVector2Array(180, 95, 169.10657, 149.23547, 138.58388, 192.72894, 94.4773, 216.866, 45.522697, 216.866, 1.4161224, 192.72894, -29.106575, 149.23547, -40, 95, -29.106575, 40.764534, 1.4161224, -2.7289352, 45.522697, -26.86599, 94.4773, -26.86599, 138.58388, -2.7289352, 169.10657, 40.764534)
+
+[node name="herbe_gauche" type="CollisionPolygon2D" parent="Obstacles" unique_id=1872713212]
+polygon = PackedVector2Array(130, 640, 122.57266, 670.3719, 101.761734, 694.7282, 71.68907, 708.24493, 38.31093, 708.24493, 8.238266, 694.7282, -12.572662, 670.3719, -20, 640, -12.572662, 609.6281, 8.238266, 585.2718, 38.31093, 571.75507, 71.68907, 571.75507, 101.761734, 585.2718, 122.57266, 609.6281)
+
+[node name="herbe_bas" type="CollisionPolygon2D" parent="Obstacles" unique_id=539747449]
+polygon = PackedVector2Array(735, 870, 726.58234, 893.8636, 702.99664, 913.00073, 668.9143, 923.62103, 631.0857, 923.62103, 597.00336, 913.00073, 573.41766, 893.8636, 565, 870, 573.41766, 846.1364, 597.00336, 826.99927, 631.0857, 816.37897, 668.9143, 816.37897, 702.99664, 826.99927, 726.58234, 846.1364)
+
+[node name="herbe_haut" type="CollisionPolygon2D" parent="Obstacles" unique_id=977873740]
+polygon = PackedVector2Array(520, 40, 511.0872, 59.52477, 486.11407, 75.18242, 450.0269, 83.87176, 409.9731, 83.87176, 373.88593, 75.18242, 348.9128, 59.52477, 340, 40, 348.9128, 20.475231, 373.88593, 4.817585, 409.9731, -3.8717575, 450.0269, -3.8717575, 486.11407, 4.817585, 511.0872, 20.475231)
+
+[node name="tronc" type="CollisionPolygon2D" parent="Obstacles" unique_id=1834556398]
+polygon = PackedVector2Array(185, 205, 235, 185, 645, 330, 630, 415, 560, 440, 190, 300)
+
+[node name="Bords" type="StaticBody2D" parent="." unique_id=2035717001]
+
+[node name="@CollisionShape2D@2" type="CollisionShape2D" parent="Bords" unique_id=1356024582]
+position = Vector2(836, -16)
+shape = SubResource("RectangleShape2D_noapr")
+
+[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="Bords" unique_id=1338172116]
+position = Vector2(836, 957)
+shape = SubResource("RectangleShape2D_scudk")
+
+[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="Bords" unique_id=1931877267]
+position = Vector2(-16, 470.5)
+shape = SubResource("RectangleShape2D_h0qsy")
+
+[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="Bords" unique_id=1465770682]
+position = Vector2(1688, 470.5)
+shape = SubResource("RectangleShape2D_lexlw")
+
+[node name="EntreeFourmiliere" type="Area2D" parent="." unique_id=1184953248]
+position = Vector2(815, 150)
+
+[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="EntreeFourmiliere" unique_id=999894256]
+shape = SubResource("CircleShape2D_nbsbo")
+
+[node name="PremierPlan" type="Node2D" parent="." unique_id=83485710]
+z_index = 2
+
+[node name="Herbe0" type="Sprite2D" parent="PremierPlan" unique_id=1934772646]
+position = Vector2(40, 941)
+texture = ExtResource("3_r7mvx")
+centered = false
+offset = Vector2(-95, -196)
+
+[node name="Herbe1" type="Sprite2D" parent="PremierPlan" unique_id=1492346648]
+position = Vector2(330, 960)
+texture = ExtResource("3_r7mvx")
+centered = false
+offset = Vector2(-95, -196)
+flip_h = true
+
+[node name="Herbe2" type="Sprite2D" parent="PremierPlan" unique_id=1852758047]
+position = Vector2(560, 950)
+texture = ExtResource("3_r7mvx")
+centered = false
+offset = Vector2(-95, -196)
+
+[node name="Herbe3" type="Sprite2D" parent="PremierPlan" unique_id=341243223]
+position = Vector2(1080, 960)
+texture = ExtResource("3_r7mvx")
+centered = false
+offset = Vector2(-95, -196)
+flip_h = true
+
+[node name="Herbe4" type="Sprite2D" parent="PremierPlan" unique_id=1979310938]
+position = Vector2(1380, 945)
+texture = ExtResource("3_r7mvx")
+centered = false
+offset = Vector2(-95, -196)
+
+[node name="Herbe5" type="Sprite2D" parent="PremierPlan" unique_id=1870352881]
+position = Vector2(1640, 950)
+texture = ExtResource("3_r7mvx")
+centered = false
+offset = Vector2(-95, -196)
+flip_h = true
+
+[node name="Herbe6" type="Sprite2D" parent="PremierPlan" unique_id=887011169]
+position = Vector2(-20, 300)
+texture = ExtResource("3_r7mvx")
+centered = false
+offset = Vector2(-95, -196)
+
+[node name="Herbe7" type="Sprite2D" parent="PremierPlan" unique_id=1156641015]
+position = Vector2(1700, 420)
+texture = ExtResource("3_r7mvx")
+centered = false
+offset = Vector2(-95, -196)
+flip_h = true
+
+[node name="RayonSoleil" type="Sprite2D" parent="." unique_id=211063465]
+z_index = 3
+material = SubResource("CanvasItemMaterial_7whqv")
+texture = ExtResource("4_mrl6t")
+centered = false
+
+[node name="Pollen" type="CPUParticles2D" parent="." unique_id=983597341]
+z_index = 3
+position = Vector2(836, 470.5)
+amount = 70
+lifetime = 9.0
+preprocess = 9.0
+emission_shape = 3
+emission_rect_extents = Vector2(836, 470.5)
+direction = Vector2(0.3, -1)
+spread = 60.0
+gravity = Vector2(0, -3)
+initial_velocity_min = 4.0
+initial_velocity_max = 12.0
+scale_amount_min = 1.5
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_urv23")
+
+[connection signal="body_entered" from="EntreeFourmiliere" to="." method="_on_entree_fourmiliere_body_entered"]

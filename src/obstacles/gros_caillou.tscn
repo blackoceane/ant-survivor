@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bu1g2xtnsn4ud"]
+
+[ext_resource type="Texture2D" uid="uid://v5o53htjv0dy" path="res://assets/images/jardin/gros_caillou.png" id="1_r3ngj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcsxf"]
+size = Vector2(100, 36)
+
+[node name="GrosCaillou" type="StaticBody2D" unique_id=2058105057]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1527513954]
+texture = ExtResource("1_r3ngj")
+offset = Vector2(0, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1893964300]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_bcsxf")

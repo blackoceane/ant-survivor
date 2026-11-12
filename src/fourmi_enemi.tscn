@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dbf6kr3yrbo1y"]
+
+[ext_resource type="Script" path="res://scripts/fourmi_zombie.gd" id="script"]
+
+[sub_resource type="RectangleShape2D" id="pieds"]
+size = Vector2(26, 10)
+
+[node name="Fourmi_enemi" type="CharacterBody2D" unique_id=1892291953 groups=["fourmis", "zombies"]]
+motion_mode = 1
+script = ExtResource("script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2038975056]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=596206941]
+position = Vector2(0, -2)
+shape = SubResource("pieds")

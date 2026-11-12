@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://pt38fg52qkn8"]
 
+[ext_resource type="PackedScene" path="res://niveaux/jardin.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://2ac0bwgjeva4" path="res://Player.tscn" id="1_ig7tw"]
 
 [node name="world" type="Node2D" unique_id=1068572960]
-position = Vector2(284, 198)
+y_sort_enabled = true
+
+[node name="Jardin" parent="." unique_id=336641800 instance=ExtResource("1_0xm2m")]
 
 [node name="Player" parent="." unique_id=1708040358 instance=ExtResource("1_ig7tw")]
-
+position = Vector2(960, 1060)
+motion_mode = 1

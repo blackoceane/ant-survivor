@@ -1,0 +1,85 @@
+{
+  "character": {
+    "id": "2ce4132f-0f7e-4d77-ad46-f4bd4672a420",
+    "name": "Idle",
+    "prompt": "one single cartoon zombie ant infected by a parasite, standing upright on two legs, hunched posture, sick purple-grey body with three round segments, glowing lime-green eyes, small purple mushrooms growing on its back and head, droopy antennae, four thin arms, cute but creepy chibi proportions, cozy Stardew Valley style, same size as a small child",
+    "size": {
+      "width": 48,
+      "height": 48
+    },
+    "directions": 8,
+    "view": "low top-down"
+  },
+  "spritesheet": {
+    "path": "one_single_cartoon_zombi-Idle.png",
+    "cell_size": {
+      "width": 64,
+      "height": 64
+    },
+    "sheet_size": {
+      "width": 576,
+      "height": 384
+    },
+    "columns": 9,
+    "pivot": "cell-center",
+    "rows": [
+      {
+        "row": 0,
+        "type": "rotations",
+        "frame_count": 8,
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ]
+      },
+      {
+        "row": 1,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "biting attack: lunges forward and bites with its mandibles, then steps back",
+        "animation_group_id": "0a9290d4-6139-41e8-9d1a-b448f11f4c72",
+        "direction": "south"
+      },
+      {
+        "row": 2,
+        "type": "animation",
+        "frame_count": 6,
+        "animation": "Walking",
+        "animation_group_id": "102541bb-dae0-4658-b100-6ab523d20ff7",
+        "direction": "south"
+      },
+      {
+        "row": 3,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "knocked out: falls down on its back and lies still",
+        "animation_group_id": "8713a28d-4240-4b93-9513-6a944c180299",
+        "direction": "south"
+      },
+      {
+        "row": 4,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "stunned: dizzy, wobbling in place with eyes spinning",
+        "animation_group_id": "a3905a75-16fd-491e-acca-e232e30236a2",
+        "direction": "south"
+      },
+      {
+        "row": 5,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "biting attack: lunges forward and bites with its mandibles, then steps back_2",
+        "animation_group_id": "b6393dc0-e9be-41e0-a4dc-aeb676b0aef9",
+        "direction": "east"
+      }
+    ]
+  },
+  "export_version": "1.0",
+  "export_date": "2026-11-12T15:21:57.939213+00:00"
+}
