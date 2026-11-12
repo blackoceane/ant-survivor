@@ -1,0 +1,28 @@
+{
+ "taille_image": [
+  32,
+  32
+ ],
+ "animations": [
+  {
+   "nom": "graine",
+   "ligne": 0,
+   "images": 2
+  },
+  {
+   "nom": "graine_guerisseuse",
+   "ligne": 1,
+   "images": 3
+  },
+  {
+   "nom": "boule_spores",
+   "ligne": 2,
+   "images": 3
+  },
+  {
+   "nom": "nuage_toxique",
+   "ligne": 3,
+   "images": 3
+  }
+ ]
+}

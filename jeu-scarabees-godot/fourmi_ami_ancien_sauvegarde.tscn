@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cwbnr4tw11dwu"]
+
+[node name="fourmi_ami" type="CharacterBody2D" unique_id=1166429517]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1695285675]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1503478654]

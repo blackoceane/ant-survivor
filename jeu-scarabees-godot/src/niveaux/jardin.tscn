@@ -1,0 +1,330 @@
+[gd_scene format=4]
+
+[ext_resource type="Texture2D" path="res://assets/images/jardin/sol_jardin.png" id="1_ojidk"]
+[ext_resource type="PackedScene" path="res://obstacles/gros_caillou.tscn" id="2_bk0dg"]
+[ext_resource type="PackedScene" path="res://obstacles/touffe_herbe.tscn" id="3_no81i"]
+[ext_resource type="PackedScene" path="res://obstacles/marguerite.tscn" id="4_aotqc"]
+[ext_resource type="PackedScene" path="res://obstacles/tronc_creux.tscn" id="5_6hly1"]
+[ext_resource type="PackedScene" path="res://obstacles/trefle.tscn" id="6_47xik"]
+[ext_resource type="PackedScene" path="res://obstacles/champignon.tscn" id="7_gdyc7"]
+[ext_resource type="PackedScene" path="res://obstacles/feuille.tscn" id="8_qjq6u"]
+[ext_resource type="PackedScene" path="res://obstacles/cailloux.tscn" id="9_vtnla"]
+[ext_resource type="PackedScene" path="res://obstacles/gland.tscn" id="10_1qtn6"]
+[ext_resource type="PackedScene" path="res://obstacles/coquille.tscn" id="11_hnd8j"]
+[ext_resource type="PackedScene" path="res://obstacles/capsule.tscn" id="12_7sdq1"]
+[ext_resource type="PackedScene" path="res://obstacles/fourmiliere.tscn" id="13_cfhhf"]
+[ext_resource type="PackedScene" path="res://obstacles/pesticide.tscn" id="14_pbqp5"]
+[ext_resource type="PackedScene" path="res://fourmi_ami.tscn" id="15_sqabi"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ct4q"]
+texture = ExtResource("1_ojidk")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jevv6"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_4ct4q")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cyghq"]
+radius = 220.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vmua"]
+radius = 36.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hg43"]
+size = Vector2(1984, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfnk7"]
+size = Vector2(1984, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtv2u"]
+size = Vector2(32, 1152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u48p7"]
+size = Vector2(32, 1152)
+
+[node name="Jardin" type="Node2D" unique_id=336641800]
+y_sort_enabled = true
+
+[node name="Sol" type="TileMapLayer" parent="." unique_id=1597305820]
+z_index = -1
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAACAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAABAAAAAAAGAAAAAAACAAAAAAAHAAAAAAADAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAABAAAAAAALAAAAAAADAAAAAAAMAAAAAAACAAAAAAANAAAAAAADAAAAAAAOAAAAAAABAAAAAAAPAAAAAAACAAAAAAAQAAAAAAACAAAAAAARAAAAAAABAAAAAAASAAAAAAADAAAAAAATAAAAAAAAAAAAAAAUAAAAAAACAAAAAAAVAAAAAAADAAAAAAAWAAAAAAACAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAACAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAABAAAAAAAdAAAAAAADAAAAAAAAAAEAAAACAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAADAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAABAAAAAAAHAAEAAAADAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAADAAAAAAAKAAEAAAADAAAAAAALAAEAAAACAAAAAAAMAAEAAAADAAAAAAANAAEAAAADAAAAAAAOAAEAAAACAAAAAAAPAAEAAAADAAAAAAAQAAEAAAACAAAAAAARAAEAAAAAAAAAAAASAAEAAAACAAAAAAATAAEAAAACAAAAAAAUAAEAAAABAAIAAAAVAAEAAAADAAIAAAAWAAEAAAACAAIAAAAXAAEAAAABAAIAAAAYAAEAAAADAAIAAAAZAAEAAAACAAAAAAAaAAEAAAABAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAACAAAAAAAdAAEAAAACAAAAAAAAAAIAAAAAAAAAAAABAAIAAAABAAAAAAACAAIAAAACAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAACAAAAAAAGAAIAAAADAAAAAAAHAAIAAAADAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAALAAIAAAADAAAAAAAMAAIAAAACAAAAAAANAAIAAAACAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAADAAAAAAAQAAIAAAACAAAAAAARAAIAAAADAAAAAAASAAIAAAACAAAAAAATAAIAAAACAAIAAAAUAAIAAAABAAEAAAAVAAIAAAADAAEAAAAWAAIAAAADAAEAAAAXAAIAAAACAAEAAAAYAAIAAAABAAEAAAAZAAIAAAADAAIAAAAaAAIAAAADAAAAAAAbAAIAAAACAAAAAAAcAAIAAAACAAAAAAAdAAIAAAABAAAAAAAAAAMAAAABAAAAAAABAAMAAAADAAAAAAACAAMAAAACAAAAAAADAAMAAAABAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAADAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAADAAAAAAAJAAMAAAABAAAAAAAKAAMAAAACAAAAAAALAAMAAAADAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAACAAAAAAAPAAMAAAACAAAAAAAQAAMAAAADAAAAAAARAAMAAAACAAAAAAASAAMAAAABAAAAAAATAAMAAAADAAIAAAAUAAMAAAACAAEAAAAVAAMAAAADAAEAAAAWAAMAAAABAAEAAAAXAAMAAAABAAEAAAAYAAMAAAAAAAEAAAAZAAMAAAABAAIAAAAaAAMAAAACAAAAAAAbAAMAAAADAAAAAAAcAAMAAAABAAAAAAAdAAMAAAACAAAAAAAAAAQAAAABAAAAAAABAAQAAAACAAAAAAACAAQAAAAAAAAAAAADAAQAAAACAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAACAAAAAAAHAAQAAAADAAAAAAAIAAQAAAACAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAACAAAAAAAMAAQAAAACAAAAAAANAAQAAAADAAAAAAAOAAQAAAACAAAAAAAPAAQAAAACAAAAAAAQAAQAAAAAAAAAAAARAAQAAAADAAAAAAASAAQAAAABAAAAAAATAAQAAAACAAIAAAAUAAQAAAABAAEAAAAVAAQAAAAAAAEAAAAWAAQAAAABAAEAAAAXAAQAAAAAAAEAAAAYAAQAAAAAAAEAAAAZAAQAAAABAAIAAAAaAAQAAAAAAAAAAAAbAAQAAAABAAAAAAAcAAQAAAABAAAAAAAdAAQAAAADAAAAAAAAAAUAAAABAAAAAAABAAUAAAAAAAAAAAACAAUAAAACAAAAAAADAAUAAAADAAAAAAAEAAUAAAADAAAAAAAFAAUAAAABAAAAAAAGAAUAAAADAAAAAAAHAAUAAAABAAAAAAAIAAUAAAAAAAIAAAAJAAUAAAACAAIAAAAKAAUAAAAAAAIAAAALAAUAAAACAAIAAAAMAAUAAAADAAIAAAANAAUAAAABAAIAAAAOAAUAAAADAAIAAAAPAAUAAAACAAIAAAAQAAUAAAAAAAIAAAARAAUAAAABAAIAAAASAAUAAAABAAIAAAATAAUAAAABAAIAAAAUAAUAAAABAAEAAAAVAAUAAAABAAEAAAAWAAUAAAADAAIAAAAXAAUAAAABAAIAAAAYAAUAAAABAAIAAAAZAAUAAAABAAAAAAAaAAUAAAABAAAAAAAbAAUAAAADAAAAAAAcAAUAAAADAAAAAAAdAAUAAAACAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAACAAAAAAAGAAYAAAABAAAAAAAHAAYAAAABAAIAAAAIAAYAAAAAAAEAAAAJAAYAAAAAAAEAAAAKAAYAAAACAAEAAAALAAYAAAACAAEAAAAMAAYAAAABAAEAAAANAAYAAAACAAEAAAAOAAYAAAADAAEAAAAPAAYAAAAAAAEAAAAQAAYAAAABAAEAAAARAAYAAAACAAEAAAASAAYAAAADAAEAAAATAAYAAAAAAAEAAAAUAAYAAAACAAEAAAAVAAYAAAAAAAEAAAAWAAYAAAADAAIAAAAXAAYAAAADAAAAAAAYAAYAAAAAAAAAAAAZAAYAAAACAAAAAAAaAAYAAAACAAAAAAAbAAYAAAAAAAAAAAAcAAYAAAAAAAAAAAAdAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAcAAAACAAAAAAACAAcAAAADAAAAAAADAAcAAAACAAAAAAAEAAcAAAADAAAAAAAFAAcAAAADAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAADAAIAAAAIAAcAAAADAAEAAAAJAAcAAAADAAEAAAAKAAcAAAAAAAEAAAALAAcAAAADAAEAAAAMAAcAAAACAAEAAAANAAcAAAAAAAEAAAAOAAcAAAABAAEAAAAPAAcAAAADAAEAAAAQAAcAAAACAAEAAAARAAcAAAACAAEAAAASAAcAAAADAAEAAAATAAcAAAACAAEAAAAUAAcAAAABAAEAAAAVAAcAAAACAAEAAAAWAAcAAAACAAIAAAAXAAcAAAABAAAAAAAYAAcAAAACAAAAAAAZAAcAAAADAAAAAAAaAAcAAAACAAAAAAAbAAcAAAACAAAAAAAcAAcAAAABAAAAAAAdAAcAAAADAAAAAAAAAAgAAAACAAAAAAABAAgAAAABAAAAAAACAAgAAAADAAAAAAADAAgAAAAAAAAAAAAEAAgAAAABAAAAAAAFAAgAAAADAAAAAAAGAAgAAAADAAAAAAAHAAgAAAADAAIAAAAIAAgAAAADAAEAAAAJAAgAAAABAAEAAAAKAAgAAAADAAEAAAALAAgAAAADAAEAAAAMAAgAAAAAAAEAAAANAAgAAAAAAAEAAAAOAAgAAAACAAEAAAAPAAgAAAAAAAEAAAAQAAgAAAACAAEAAAARAAgAAAACAAEAAAASAAgAAAAAAAEAAAATAAgAAAAAAAEAAAAUAAgAAAABAAEAAAAVAAgAAAAAAAEAAAAWAAgAAAADAAIAAAAXAAgAAAACAAAAAAAYAAgAAAAAAAAAAAAZAAgAAAACAAAAAAAaAAgAAAABAAAAAAAbAAgAAAACAAAAAAAcAAgAAAABAAAAAAAdAAgAAAAAAAAAAAAAAAkAAAACAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAACAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAACAAAAAAAHAAkAAAADAAIAAAAIAAkAAAAAAAEAAAAJAAkAAAAAAAEAAAAKAAkAAAACAAEAAAALAAkAAAABAAEAAAAMAAkAAAAAAAEAAAANAAkAAAADAAEAAAAOAAkAAAADAAEAAAAPAAkAAAAAAAEAAAAQAAkAAAABAAEAAAARAAkAAAADAAEAAAASAAkAAAAAAAEAAAATAAkAAAAAAAEAAAAUAAkAAAABAAEAAAAVAAkAAAADAAEAAAAWAAkAAAAAAAIAAAAXAAkAAAAAAAAAAAAYAAkAAAADAAAAAAAZAAkAAAACAAAAAAAaAAkAAAAAAAAAAAAbAAkAAAACAAAAAAAcAAkAAAAAAAAAAAAdAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAABAAoAAAACAAAAAAACAAoAAAACAAAAAAADAAoAAAABAAAAAAAEAAoAAAACAAAAAAAFAAoAAAABAAAAAAAGAAoAAAABAAAAAAAHAAoAAAABAAIAAAAIAAoAAAACAAEAAAAJAAoAAAABAAEAAAAKAAoAAAAAAAEAAAALAAoAAAACAAEAAAAMAAoAAAACAAEAAAANAAoAAAACAAEAAAAOAAoAAAADAAEAAAAPAAoAAAAAAAEAAAAQAAoAAAADAAEAAAARAAoAAAAAAAEAAAASAAoAAAAAAAEAAAATAAoAAAADAAEAAAAUAAoAAAACAAEAAAAVAAoAAAAAAAEAAAAWAAoAAAACAAIAAAAXAAoAAAABAAAAAAAYAAoAAAADAAAAAAAZAAoAAAABAAAAAAAaAAoAAAACAAAAAAAbAAoAAAABAAAAAAAcAAoAAAACAAAAAAAdAAoAAAABAAAAAAAAAAsAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAADAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAACAAAAAAAGAAsAAAADAAAAAAAHAAsAAAADAAIAAAAIAAsAAAAAAAEAAAAJAAsAAAABAAEAAAAKAAsAAAADAAEAAAALAAsAAAADAAEAAAAMAAsAAAABAAEAAAANAAsAAAABAAEAAAAOAAsAAAAAAAEAAAAPAAsAAAAAAAEAAAAQAAsAAAABAAEAAAARAAsAAAAAAAEAAAASAAsAAAABAAEAAAATAAsAAAAAAAEAAAAUAAsAAAAAAAEAAAAVAAsAAAABAAEAAAAWAAsAAAAAAAIAAAAXAAsAAAACAAAAAAAYAAsAAAAAAAAAAAAZAAsAAAADAAAAAAAaAAsAAAABAAAAAAAbAAsAAAACAAAAAAAcAAsAAAABAAAAAAAdAAsAAAABAAAAAAAAAAwAAAAAAAAAAAABAAwAAAADAAAAAAACAAwAAAAAAAAAAAADAAwAAAAAAAAAAAAEAAwAAAADAAAAAAAFAAwAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAwAAAADAAAAAAAIAAwAAAADAAIAAAAJAAwAAAADAAIAAAAKAAwAAAADAAIAAAALAAwAAAADAAIAAAAMAAwAAAAAAAIAAAANAAwAAAAAAAIAAAAOAAwAAAAAAAEAAAAPAAwAAAAAAAEAAAAQAAwAAAABAAIAAAARAAwAAAADAAIAAAASAAwAAAACAAIAAAATAAwAAAACAAIAAAAUAAwAAAACAAIAAAAVAAwAAAACAAIAAAAWAAwAAAAAAAAAAAAXAAwAAAACAAAAAAAYAAwAAAABAAAAAAAZAAwAAAAAAAAAAAAaAAwAAAACAAAAAAAbAAwAAAAAAAAAAAAcAAwAAAACAAAAAAAdAAwAAAACAAAAAAAAAA0AAAADAAAAAAABAA0AAAAAAAAAAAACAA0AAAACAAAAAAADAA0AAAADAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAACAAAAAAAGAA0AAAADAAAAAAAHAA0AAAADAAAAAAAIAA0AAAADAAAAAAAJAA0AAAAAAAAAAAAKAA0AAAABAAAAAAALAA0AAAAAAAAAAAAMAA0AAAADAAAAAAANAA0AAAABAAIAAAAOAA0AAAACAAEAAAAPAA0AAAADAAEAAAAQAA0AAAAAAAIAAAARAA0AAAAAAAAAAAASAA0AAAAAAAAAAAATAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAAVAA0AAAADAAAAAAAWAA0AAAABAAAAAAAXAA0AAAACAAAAAAAYAA0AAAADAAAAAAAZAA0AAAABAAAAAAAaAA0AAAACAAAAAAAbAA0AAAAAAAAAAAAcAA0AAAABAAAAAAAdAA0AAAAAAAAAAAAAAA4AAAADAAAAAAABAA4AAAABAAAAAAACAA4AAAABAAAAAAADAA4AAAACAAAAAAAEAA4AAAADAAAAAAAFAA4AAAADAAAAAAAGAA4AAAACAAAAAAAHAA4AAAACAAAAAAAIAA4AAAAAAAAAAAAJAA4AAAAAAAAAAAAKAA4AAAAAAAAAAAALAA4AAAAAAAAAAAAMAA4AAAACAAAAAAANAA4AAAABAAIAAAAOAA4AAAACAAEAAAAPAA4AAAACAAEAAAAQAA4AAAABAAIAAAARAA4AAAACAAAAAAASAA4AAAACAAAAAAATAA4AAAABAAAAAAAUAA4AAAADAAAAAAAVAA4AAAADAAAAAAAWAA4AAAAAAAAAAAAXAA4AAAACAAAAAAAYAA4AAAABAAAAAAAZAA4AAAABAAAAAAAaAA4AAAAAAAAAAAAbAA4AAAABAAAAAAAcAA4AAAACAAAAAAAdAA4AAAADAAAAAAAAAA8AAAABAAAAAAABAA8AAAACAAAAAAACAA8AAAADAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAACAAAAAAAGAA8AAAACAAAAAAAHAA8AAAACAAAAAAAIAA8AAAACAAAAAAAJAA8AAAADAAAAAAAKAA8AAAACAAAAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAANAA8AAAAAAAIAAAAOAA8AAAADAAEAAAAPAA8AAAACAAEAAAAQAA8AAAAAAAIAAAARAA8AAAACAAAAAAASAA8AAAADAAAAAAATAA8AAAADAAAAAAAUAA8AAAACAAAAAAAVAA8AAAACAAAAAAAWAA8AAAADAAAAAAAXAA8AAAAAAAAAAAAYAA8AAAADAAAAAAAZAA8AAAACAAAAAAAaAA8AAAADAAAAAAAbAA8AAAACAAAAAAAcAA8AAAABAAAAAAAdAA8AAAABAAAAAAAAABAAAAADAAAAAAABABAAAAACAAAAAAACABAAAAACAAAAAAADABAAAAADAAAAAAAEABAAAAAAAAAAAAAFABAAAAABAAAAAAAGABAAAAABAAAAAAAHABAAAAABAAAAAAAIABAAAAAAAAAAAAAJABAAAAADAAAAAAAKABAAAAADAAAAAAALABAAAAAAAAAAAAAMABAAAAABAAAAAAANABAAAAADAAIAAAAOABAAAAADAAEAAAAPABAAAAABAAEAAAAQABAAAAAAAAIAAAARABAAAAACAAAAAAASABAAAAAAAAAAAAATABAAAAAAAAAAAAAUABAAAAABAAAAAAAVABAAAAAAAAAAAAAWABAAAAABAAAAAAAXABAAAAABAAAAAAAYABAAAAACAAAAAAAZABAAAAACAAAAAAAaABAAAAAAAAAAAAAbABAAAAACAAAAAAAcABAAAAABAAAAAAAdABAAAAADAAAAAAAAABEAAAAAAAAAAAABABEAAAABAAAAAAACABEAAAABAAAAAAADABEAAAADAAAAAAAEABEAAAAAAAAAAAAFABEAAAADAAAAAAAGABEAAAAAAAAAAAAHABEAAAADAAAAAAAIABEAAAACAAAAAAAJABEAAAADAAAAAAAKABEAAAABAAAAAAALABEAAAADAAAAAAAMABEAAAABAAAAAAANABEAAAABAAIAAAAOABEAAAACAAEAAAAPABEAAAACAAEAAAAQABEAAAADAAIAAAARABEAAAACAAAAAAASABEAAAAAAAAAAAATABEAAAABAAAAAAAUABEAAAAAAAAAAAAVABEAAAAAAAAAAAAWABEAAAAAAAAAAAAXABEAAAACAAAAAAAYABEAAAAAAAAAAAAZABEAAAACAAAAAAAaABEAAAAAAAAAAAAbABEAAAAAAAAAAAAcABEAAAADAAAAAAAdABEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_jevv6")
+
+[node name="Obstacles" type="Node2D" parent="." unique_id=1073069396]
+y_sort_enabled = true
+
+[node name="GrosCaillou1" type="StaticBody2D" parent="Obstacles" unique_id=2058105057 instance=ExtResource("2_bk0dg")]
+position = Vector2(40, 70)
+
+[node name="TouffeHerbe1" type="StaticBody2D" parent="Obstacles" unique_id=119578948 instance=ExtResource("3_no81i")]
+position = Vector2(70, 1150)
+
+[node name="Marguerite1" type="StaticBody2D" parent="Obstacles" unique_id=250343235 instance=ExtResource("4_aotqc")]
+position = Vector2(145, 70)
+
+[node name="GrosCaillou2" type="StaticBody2D" parent="Obstacles" unique_id=1506642657 instance=ExtResource("2_bk0dg")]
+position = Vector2(175, 1150)
+
+[node name="TouffeHerbe2" type="StaticBody2D" parent="Obstacles" unique_id=1100421686 instance=ExtResource("3_no81i")]
+position = Vector2(250, 70)
+
+[node name="GrosCaillou3" type="StaticBody2D" parent="Obstacles" unique_id=1227014715 instance=ExtResource("2_bk0dg")]
+position = Vector2(280, 1150)
+
+[node name="GrosCaillou4" type="StaticBody2D" parent="Obstacles" unique_id=511761491 instance=ExtResource("2_bk0dg")]
+position = Vector2(355, 70)
+
+[node name="Marguerite2" type="StaticBody2D" parent="Obstacles" unique_id=957742667 instance=ExtResource("4_aotqc")]
+position = Vector2(385, 1150)
+
+[node name="GrosCaillou5" type="StaticBody2D" parent="Obstacles" unique_id=2095817973 instance=ExtResource("2_bk0dg")]
+position = Vector2(460, 70)
+
+[node name="TouffeHerbe3" type="StaticBody2D" parent="Obstacles" unique_id=977003105 instance=ExtResource("3_no81i")]
+position = Vector2(490, 1150)
+
+[node name="Marguerite3" type="StaticBody2D" parent="Obstacles" unique_id=1130833745 instance=ExtResource("4_aotqc")]
+position = Vector2(565, 70)
+
+[node name="GrosCaillou6" type="StaticBody2D" parent="Obstacles" unique_id=788433053 instance=ExtResource("2_bk0dg")]
+position = Vector2(595, 1150)
+
+[node name="TouffeHerbe4" type="StaticBody2D" parent="Obstacles" unique_id=1590050895 instance=ExtResource("3_no81i")]
+position = Vector2(670, 70)
+
+[node name="GrosCaillou7" type="StaticBody2D" parent="Obstacles" unique_id=975874075 instance=ExtResource("2_bk0dg")]
+position = Vector2(700, 1150)
+
+[node name="GrosCaillou8" type="StaticBody2D" parent="Obstacles" unique_id=1515921822 instance=ExtResource("2_bk0dg")]
+position = Vector2(775, 70)
+
+[node name="Marguerite4" type="StaticBody2D" parent="Obstacles" unique_id=2076230789 instance=ExtResource("4_aotqc")]
+position = Vector2(805, 1150)
+
+[node name="GrosCaillou9" type="StaticBody2D" parent="Obstacles" unique_id=724431631 instance=ExtResource("2_bk0dg")]
+position = Vector2(880, 70)
+
+[node name="TouffeHerbe5" type="StaticBody2D" parent="Obstacles" unique_id=1112104054 instance=ExtResource("3_no81i")]
+position = Vector2(910, 1150)
+
+[node name="Marguerite5" type="StaticBody2D" parent="Obstacles" unique_id=1488922906 instance=ExtResource("4_aotqc")]
+position = Vector2(985, 70)
+
+[node name="GrosCaillou10" type="StaticBody2D" parent="Obstacles" unique_id=1222624824 instance=ExtResource("2_bk0dg")]
+position = Vector2(1015, 1150)
+
+[node name="TouffeHerbe6" type="StaticBody2D" parent="Obstacles" unique_id=641049222 instance=ExtResource("3_no81i")]
+position = Vector2(1090, 70)
+
+[node name="GrosCaillou11" type="StaticBody2D" parent="Obstacles" unique_id=241841958 instance=ExtResource("2_bk0dg")]
+position = Vector2(1120, 1150)
+
+[node name="GrosCaillou12" type="StaticBody2D" parent="Obstacles" unique_id=1335347435 instance=ExtResource("2_bk0dg")]
+position = Vector2(1195, 70)
+
+[node name="Marguerite6" type="StaticBody2D" parent="Obstacles" unique_id=659979671 instance=ExtResource("4_aotqc")]
+position = Vector2(1225, 1150)
+
+[node name="GrosCaillou13" type="StaticBody2D" parent="Obstacles" unique_id=1930743605 instance=ExtResource("2_bk0dg")]
+position = Vector2(1300, 70)
+
+[node name="TouffeHerbe7" type="StaticBody2D" parent="Obstacles" unique_id=572714123 instance=ExtResource("3_no81i")]
+position = Vector2(1330, 1150)
+
+[node name="Marguerite7" type="StaticBody2D" parent="Obstacles" unique_id=773559816 instance=ExtResource("4_aotqc")]
+position = Vector2(1405, 70)
+
+[node name="GrosCaillou14" type="StaticBody2D" parent="Obstacles" unique_id=353336315 instance=ExtResource("2_bk0dg")]
+position = Vector2(1435, 1150)
+
+[node name="TouffeHerbe8" type="StaticBody2D" parent="Obstacles" unique_id=918017193 instance=ExtResource("3_no81i")]
+position = Vector2(1510, 70)
+
+[node name="GrosCaillou15" type="StaticBody2D" parent="Obstacles" unique_id=2069562580 instance=ExtResource("2_bk0dg")]
+position = Vector2(1540, 1150)
+
+[node name="GrosCaillou16" type="StaticBody2D" parent="Obstacles" unique_id=1481614047 instance=ExtResource("2_bk0dg")]
+position = Vector2(1615, 70)
+
+[node name="Marguerite8" type="StaticBody2D" parent="Obstacles" unique_id=166403034 instance=ExtResource("4_aotqc")]
+position = Vector2(1645, 1150)
+
+[node name="GrosCaillou17" type="StaticBody2D" parent="Obstacles" unique_id=1297576638 instance=ExtResource("2_bk0dg")]
+position = Vector2(1720, 70)
+
+[node name="TouffeHerbe9" type="StaticBody2D" parent="Obstacles" unique_id=241206889 instance=ExtResource("3_no81i")]
+position = Vector2(1750, 1150)
+
+[node name="Marguerite9" type="StaticBody2D" parent="Obstacles" unique_id=1133428564 instance=ExtResource("4_aotqc")]
+position = Vector2(1825, 70)
+
+[node name="GrosCaillou18" type="StaticBody2D" parent="Obstacles" unique_id=1543523094 instance=ExtResource("2_bk0dg")]
+position = Vector2(1855, 1150)
+
+[node name="TroncCreux1" type="StaticBody2D" parent="Obstacles" unique_id=1547464284 instance=ExtResource("5_6hly1")]
+position = Vector2(45, 170)
+
+[node name="Marguerite10" type="StaticBody2D" parent="Obstacles" unique_id=1270581536 instance=ExtResource("4_aotqc")]
+position = Vector2(1880, 210)
+
+[node name="Trefle1" type="StaticBody2D" parent="Obstacles" unique_id=543888613 instance=ExtResource("6_47xik")]
+position = Vector2(45, 280)
+
+[node name="TouffeHerbe10" type="StaticBody2D" parent="Obstacles" unique_id=1863919145 instance=ExtResource("3_no81i")]
+position = Vector2(1880, 320)
+
+[node name="TouffeHerbe11" type="StaticBody2D" parent="Obstacles" unique_id=601843095 instance=ExtResource("3_no81i")]
+position = Vector2(45, 390)
+
+[node name="GrosCaillou19" type="StaticBody2D" parent="Obstacles" unique_id=1686700632 instance=ExtResource("2_bk0dg")]
+position = Vector2(1880, 430)
+
+[node name="Champignon1" type="StaticBody2D" parent="Obstacles" unique_id=184411206 instance=ExtResource("7_gdyc7")]
+position = Vector2(45, 500)
+
+[node name="GrosCaillou20" type="StaticBody2D" parent="Obstacles" unique_id=791004905 instance=ExtResource("2_bk0dg")]
+position = Vector2(1880, 540)
+
+[node name="TroncCreux2" type="StaticBody2D" parent="Obstacles" unique_id=2036767138 instance=ExtResource("5_6hly1")]
+position = Vector2(45, 610)
+
+[node name="Marguerite11" type="StaticBody2D" parent="Obstacles" unique_id=1466530545 instance=ExtResource("4_aotqc")]
+position = Vector2(1880, 650)
+
+[node name="Trefle2" type="StaticBody2D" parent="Obstacles" unique_id=142663910 instance=ExtResource("6_47xik")]
+position = Vector2(45, 720)
+
+[node name="TouffeHerbe12" type="StaticBody2D" parent="Obstacles" unique_id=1284125036 instance=ExtResource("3_no81i")]
+position = Vector2(1880, 760)
+
+[node name="TouffeHerbe13" type="StaticBody2D" parent="Obstacles" unique_id=775662170 instance=ExtResource("3_no81i")]
+position = Vector2(45, 830)
+
+[node name="GrosCaillou21" type="StaticBody2D" parent="Obstacles" unique_id=834482838 instance=ExtResource("2_bk0dg")]
+position = Vector2(1880, 870)
+
+[node name="Champignon2" type="StaticBody2D" parent="Obstacles" unique_id=1358276269 instance=ExtResource("7_gdyc7")]
+position = Vector2(45, 940)
+
+[node name="GrosCaillou22" type="StaticBody2D" parent="Obstacles" unique_id=488418894 instance=ExtResource("2_bk0dg")]
+position = Vector2(1880, 980)
+
+[node name="TroncCreux3" type="StaticBody2D" parent="Obstacles" unique_id=1470009030 instance=ExtResource("5_6hly1")]
+position = Vector2(45, 1050)
+
+[node name="Marguerite12" type="StaticBody2D" parent="Obstacles" unique_id=291361712 instance=ExtResource("4_aotqc")]
+position = Vector2(1880, 1090)
+
+[node name="GrosCaillou23" type="StaticBody2D" parent="Obstacles" unique_id=1353324306 instance=ExtResource("2_bk0dg")]
+position = Vector2(300, 330)
+
+[node name="Trefle3" type="StaticBody2D" parent="Obstacles" unique_id=1491599187 instance=ExtResource("6_47xik")]
+position = Vector2(370, 360)
+
+[node name="Feuille1" type="StaticBody2D" parent="Obstacles" unique_id=1875506393 instance=ExtResource("8_qjq6u")]
+position = Vector2(250, 400)
+
+[node name="Marguerite13" type="StaticBody2D" parent="Obstacles" unique_id=1334398936 instance=ExtResource("4_aotqc")]
+position = Vector2(330, 840)
+
+[node name="Cailloux1" type="StaticBody2D" parent="Obstacles" unique_id=1196750685 instance=ExtResource("9_vtnla")]
+position = Vector2(420, 880)
+
+[node name="Gland1" type="StaticBody2D" parent="Obstacles" unique_id=1759828615 instance=ExtResource("10_1qtn6")]
+position = Vector2(260, 900)
+
+[node name="TroncCreux4" type="StaticBody2D" parent="Obstacles" unique_id=592730928 instance=ExtResource("5_6hly1")]
+position = Vector2(640, 300)
+
+[node name="Champignon3" type="StaticBody2D" parent="Obstacles" unique_id=807933817 instance=ExtResource("7_gdyc7")]
+position = Vector2(720, 330)
+
+[node name="GrosCaillou24" type="StaticBody2D" parent="Obstacles" unique_id=1281543593 instance=ExtResource("2_bk0dg")]
+position = Vector2(1560, 880)
+
+[node name="Coquille1" type="StaticBody2D" parent="Obstacles" unique_id=983377912 instance=ExtResource("11_hnd8j")]
+position = Vector2(1480, 920)
+
+[node name="TouffeHerbe14" type="StaticBody2D" parent="Obstacles" unique_id=924881961 instance=ExtResource("3_no81i")]
+position = Vector2(1650, 900)
+
+[node name="Marguerite14" type="StaticBody2D" parent="Obstacles" unique_id=1597426339 instance=ExtResource("4_aotqc")]
+position = Vector2(1650, 560)
+
+[node name="Capsule1" type="StaticBody2D" parent="Obstacles" unique_id=2009717353 instance=ExtResource("12_7sdq1")]
+position = Vector2(1580, 610)
+
+[node name="Cailloux2" type="StaticBody2D" parent="Obstacles" unique_id=345918581 instance=ExtResource("9_vtnla")]
+position = Vector2(700, 1000)
+
+[node name="Trefle4" type="StaticBody2D" parent="Obstacles" unique_id=72620445 instance=ExtResource("6_47xik")]
+position = Vector2(1200, 1010)
+
+[node name="Feuille2" type="StaticBody2D" parent="Obstacles" unique_id=2042381335 instance=ExtResource("8_qjq6u")]
+position = Vector2(1280, 960)
+
+[node name="Champignon4" type="StaticBody2D" parent="Obstacles" unique_id=1895899829 instance=ExtResource("7_gdyc7")]
+position = Vector2(1150, 300)
+
+[node name="Gland2" type="StaticBody2D" parent="Obstacles" unique_id=437198188 instance=ExtResource("10_1qtn6")]
+position = Vector2(1080, 330)
+
+[node name="Fourmiliere1" type="StaticBody2D" parent="Obstacles" unique_id=310140293 instance=ExtResource("13_cfhhf")]
+position = Vector2(1440, 200)
+
+[node name="FlaquePesticide1" type="StaticBody2D" parent="Obstacles" unique_id=120837629 instance=ExtResource("14_pbqp5")]
+position = Vector2(1700, 330)
+
+[node name="PositionAmi" type="Marker2D" parent="." unique_id=1481178937]
+position = Vector2(930, 560)
+
+[node name="fourmi_ami" type="CharacterBody2D" parent="." unique_id=1166429517 instance=ExtResource("15_sqabi")]
+position = Vector2(930, 560)
+
+[node name="ZoneCombat" type="Area2D" parent="." unique_id=1202300509]
+position = Vector2(930, 580)
+
+[node name="@CollisionShape2D@2" type="CollisionShape2D" parent="ZoneCombat" unique_id=3344874]
+shape = SubResource("CircleShape2D_cyghq")
+
+[node name="PorteFourmiliere" type="Area2D" parent="." unique_id=732408582]
+position = Vector2(1440, 235)
+
+[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="PorteFourmiliere" unique_id=968773971]
+shape = SubResource("CircleShape2D_4vmua")
+
+[node name="Depart" type="Marker2D" parent="." unique_id=506944230]
+position = Vector2(960, 1060)
+
+[node name="Bords" type="StaticBody2D" parent="." unique_id=1911915369]
+
+[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="Bords" unique_id=738892705]
+position = Vector2(960, -16)
+shape = SubResource("RectangleShape2D_4hg43")
+
+[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="Bords" unique_id=1752842826]
+position = Vector2(960, 1168)
+shape = SubResource("RectangleShape2D_qfnk7")
+
+[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="Bords" unique_id=1538577437]
+position = Vector2(-16, 576)
+shape = SubResource("RectangleShape2D_qtv2u")
+
+[node name="@CollisionShape2D@7" type="CollisionShape2D" parent="Bords" unique_id=1258645613]
+position = Vector2(1936, 576)
+shape = SubResource("RectangleShape2D_u48p7")

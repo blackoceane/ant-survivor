@@ -1,0 +1,90 @@
+{
+ "taille_image": [
+  48,
+  48
+ ],
+ "colonnes": 6,
+ "lignes": 16,
+ "animations": [
+  {
+   "nom": "repos_down",
+   "ligne": 0,
+   "images": 4
+  },
+  {
+   "nom": "marche_down",
+   "ligne": 1,
+   "images": 6
+  },
+  {
+   "nom": "tir_down",
+   "ligne": 2,
+   "images": 4
+  },
+  {
+   "nom": "repos_up",
+   "ligne": 3,
+   "images": 4
+  },
+  {
+   "nom": "marche_up",
+   "ligne": 4,
+   "images": 6
+  },
+  {
+   "nom": "tir_up",
+   "ligne": 5,
+   "images": 4
+  },
+  {
+   "nom": "repos_right",
+   "ligne": 6,
+   "images": 4
+  },
+  {
+   "nom": "marche_right",
+   "ligne": 7,
+   "images": 6
+  },
+  {
+   "nom": "tir_right",
+   "ligne": 8,
+   "images": 4
+  },
+  {
+   "nom": "repos_left",
+   "ligne": 9,
+   "images": 4
+  },
+  {
+   "nom": "marche_left",
+   "ligne": 10,
+   "images": 6
+  },
+  {
+   "nom": "tir_left",
+   "ligne": 11,
+   "images": 4
+  },
+  {
+   "nom": "roulade",
+   "ligne": 12,
+   "images": 6
+  },
+  {
+   "nom": "touche",
+   "ligne": 13,
+   "images": 3
+  },
+  {
+   "nom": "defaite",
+   "ligne": 14,
+   "images": 6
+  },
+  {
+   "nom": "victoire",
+   "ligne": 15,
+   "images": 4
+  }
+ ]
+}
