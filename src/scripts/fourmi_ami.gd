@@ -11,10 +11,13 @@ var dialogue_fini : bool = false  # mis à vrai quand le texte est terminé
 
 func _ready() -> void:
 	anim = $AnimatedSprite2D
-	anim.play("idle_down")
+	anim.play("idle")
 	# Si on ne les a pas choisis dans l'inspecteur, on les cherche dans la scène
+
+	#la fourmi trouve l’enfant toute seule.
 	if player == null:
 		player = get_tree().current_scene.find_child("Player", true, false)
+	#la fourmi trouve la porte de la fourmilière toute seule.
 	if porte == null:
 		porte = get_parent().get_node_or_null("PorteFourmiliere")
 

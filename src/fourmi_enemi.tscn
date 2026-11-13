@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dporlj20m8uo5" path="res://assets/personnages/one_single_cartoon_zombi-Idle-spritesheet/one_single_cartoon_zombi-Idle.png" id="1_6pjy0"]
 [ext_resource type="Texture2D" uid="uid://34xe1bfuydxx" path="res://assets/personnages/one_single_cartoon_zombi-Idle-spritesheet(1)/one_single_cartoon_zombi-Idle.png" id="2_die35"]
+[ext_resource type="Script" uid="uid://hb2e0oodqb8r" path="res://scripts/state_machine.gd" id="3_kund3"]
+[ext_resource type="Script" uid="uid://co5aq7au8lwdv" path="res://scripts/states/zombie_attaque_amie.gd" id="4_susf5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pjy0"]
 atlas = ExtResource("1_6pjy0")
@@ -430,7 +432,9 @@ motion_mode = 1
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2038975056]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_q1sq1")
-animation = &"stunned"
+animation = &"idle"
+frame = 2
+frame_progress = 0.9678544
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=596206941]
 position = Vector2(0, -2)
@@ -443,3 +447,9 @@ offset_right = 20.0
 offset_bottom = -35.0
 exp_edit = true
 texture_progress = SubResource("ViewportTexture_dctbr")
+
+[node name="StateMachine" type="Node" parent="." unique_id=843968812]
+script = ExtResource("3_kund3")
+
+[node name="AttaqueAmie" type="Node" parent="StateMachine" unique_id=680119185]
+script = ExtResource("4_susf5")
