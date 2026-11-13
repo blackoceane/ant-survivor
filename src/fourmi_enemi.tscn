@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://dbf6kr3yrbo1y"]
 
 [ext_resource type="Texture2D" uid="uid://dporlj20m8uo5" path="res://assets/personnages/one_single_cartoon_zombi-Idle-spritesheet/one_single_cartoon_zombi-Idle.png" id="1_6pjy0"]
+[ext_resource type="Script" uid="uid://ds6ay6ajvl75p" path="res://scripts/fourmi_zombie.gd" id="1_susf5"]
 [ext_resource type="Texture2D" uid="uid://34xe1bfuydxx" path="res://assets/personnages/one_single_cartoon_zombi-Idle-spritesheet(1)/one_single_cartoon_zombi-Idle.png" id="2_die35"]
 [ext_resource type="Script" uid="uid://hb2e0oodqb8r" path="res://scripts/state_machine.gd" id="3_kund3"]
 [ext_resource type="Script" uid="uid://co5aq7au8lwdv" path="res://scripts/states/zombie_attaque_amie.gd" id="4_susf5"]
+[ext_resource type="Script" uid="uid://bjkt61er1upum" path="res://scripts/states/zombie_poursuivre_enemi.gd" id="6_f0klh"]
+[ext_resource type="Script" uid="uid://cg60ctgqbpm1t" path="res://scripts/states/zombie_touchee.gd" id="7_5ke86"]
+[ext_resource type="Script" uid="uid://dwtqpk545nldv" path="res://scripts/states/zombie_attack_player.gd" id="8_rlbcs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pjy0"]
 atlas = ExtResource("1_6pjy0")
@@ -283,8 +287,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s4d1e")
 }],
-"loop": 1,
-"name": &"fall",
+"loop": 0,
+"name": &"die",
 "speed": 5.0
 }, {
 "frames": [{
@@ -329,7 +333,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oxifs")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"stunned",
 "speed": 5.0
 }, {
@@ -428,13 +432,12 @@ size = Vector2(26, 10)
 
 [node name="Fourmi_enemi" type="CharacterBody2D" unique_id=1892291953 groups=["fourmis", "zombies"]]
 motion_mode = 1
+script = ExtResource("1_susf5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2038975056]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_q1sq1")
 animation = &"idle"
-frame = 2
-frame_progress = 0.9678544
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=596206941]
 position = Vector2(0, -2)
@@ -446,10 +449,23 @@ offset_top = -75.0
 offset_right = 20.0
 offset_bottom = -35.0
 exp_edit = true
-texture_progress = SubResource("ViewportTexture_dctbr")
 
-[node name="StateMachine" type="Node" parent="." unique_id=843968812]
+[node name="StateMachine" type="Node" parent="." unique_id=843968812 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_kund3")
+initial_state = NodePath("AttaqueAmie")
 
-[node name="AttaqueAmie" type="Node" parent="StateMachine" unique_id=680119185]
+[node name="AttaqueAmie" type="Node" parent="StateMachine" unique_id=680119185 node_paths=PackedStringArray("fourmi_zombie")]
 script = ExtResource("4_susf5")
+fourmi_zombie = NodePath("../..")
+
+[node name="Poursuivre" type="Node" parent="StateMachine" unique_id=1624098561 node_paths=PackedStringArray("fourmi_zombie")]
+script = ExtResource("6_f0klh")
+fourmi_zombie = NodePath("../..")
+
+[node name="Touchee" type="Node" parent="StateMachine" unique_id=610145348 node_paths=PackedStringArray("fourmi_zombie")]
+script = ExtResource("7_5ke86")
+fourmi_zombie = NodePath("../..")
+
+[node name="AttackPlayer" type="Node" parent="StateMachine" unique_id=1997260351 node_paths=PackedStringArray("fourmi_zombie")]
+script = ExtResource("8_rlbcs")
+fourmi_zombie = NodePath("../..")

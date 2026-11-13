@@ -11,7 +11,7 @@ var dialogue_fini : bool = false  # mis à vrai quand le texte est terminé
 
 func _ready() -> void:
 	anim = $AnimatedSprite2D
-	anim.play("idle")
+	anim.play("idle_down")
 	# Si on ne les a pas choisis dans l'inspecteur, on les cherche dans la scène
 
 	#la fourmi trouve l’enfant toute seule.

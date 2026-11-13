@@ -1,13 +1,13 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dqhtv7liebwgw"]
 
-[ext_resource type="Script" path="res://scripts/fourmi_ami.gd" id="1_fkr0p"]
-[ext_resource type="Texture2D" path="res://assets/images/personnages/fourmi_ami.png" id="2_bp4gp"]
-[ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_r46he"]
-[ext_resource type="Script" path="res://scripts/states/ami_combat.gd" id="4_ekxef"]
-[ext_resource type="Script" path="res://scripts/states/ami_touchee.gd" id="5_nj5ms"]
-[ext_resource type="Script" path="res://scripts/states/ami_parle.gd" id="6_ogndg"]
-[ext_resource type="Script" path="res://scripts/states/ami_suit.gd" id="7_caki5"]
-[ext_resource type="Script" path="res://scripts/states/ami_repos.gd" id="8_4w4c3"]
+[ext_resource type="Script" uid="uid://5msvicopcvrp" path="res://scripts/fourmi_ami.gd" id="1_fkr0p"]
+[ext_resource type="Texture2D" uid="uid://cp4ue7wgdacj8" path="res://assets/images/personnages/fourmi_ami.png" id="2_bp4gp"]
+[ext_resource type="Script" uid="uid://hb2e0oodqb8r" path="res://scripts/state_machine.gd" id="3_r46he"]
+[ext_resource type="Script" uid="uid://c2nctfvyl6fgg" path="res://scripts/states/ami_combat.gd" id="4_ekxef"]
+[ext_resource type="Script" uid="uid://ccuhey1rbynv3" path="res://scripts/states/ami_touchee.gd" id="5_nj5ms"]
+[ext_resource type="Script" uid="uid://s8tg23cgwyvn" path="res://scripts/states/ami_parle.gd" id="6_ogndg"]
+[ext_resource type="Script" uid="uid://bac0h6q4ekhvx" path="res://scripts/states/ami_suit.gd" id="7_caki5"]
+[ext_resource type="Script" uid="uid://ihg5v0jiu88i" path="res://scripts/states/ami_repos.gd" id="8_4w4c3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhgye"]
 atlas = ExtResource("2_bp4gp")
@@ -343,7 +343,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"hurt",
-"speed": 10.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -510,12 +510,14 @@ animations = [{
 size = Vector2(18, 10)
 
 [node name="FourmiAmi" type="CharacterBody2D" unique_id=906244132 groups=["amis"]]
+texture_filter = 1
 motion_mode = 1
 script = ExtResource("1_fkr0p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1881323948]
 sprite_frames = SubResource("SpriteFrames_whqvx")
-animation = &"idle_down"
+animation = &"hurt"
+frame_progress = 0.7077203
 offset = Vector2(0, -20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=823545082]
@@ -524,7 +526,7 @@ shape = SubResource("RectangleShape2D_j3ugr")
 
 [node name="StateMachine" type="Node" parent="." unique_id=1575736260 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_r46he")
-initial_state = NodePath("Combat")
+initial_state = NodePath("Touchee")
 
 [node name="Combat" type="Node" parent="StateMachine" unique_id=1304478376 node_paths=PackedStringArray("fourmi")]
 script = ExtResource("4_ekxef")
