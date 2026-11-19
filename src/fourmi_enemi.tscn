@@ -93,6 +93,10 @@ region = Rect2(64, 11, 64, 41)
 atlas = ExtResource("1_6pjy0")
 region = Rect2(128, 11, 64, 41)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj5f2"]
+atlas = ExtResource("2_die35")
+region = Rect2(512, 320, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8x27h"]
 atlas = ExtResource("1_6pjy0")
 region = Rect2(0, 256, 64, 64)
@@ -307,6 +311,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_sj5f2")
+}],
+"loop": 1,
+"name": &"mort",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_8x27h")
 }, {
 "duration": 1.0,
@@ -428,8 +440,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="pieds"]
 size = Vector2(26, 10)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dctbr"]
-
 [node name="Fourmi_enemi" type="CharacterBody2D" unique_id=1892291953 groups=["fourmis", "zombies"]]
 motion_mode = 1
 script = ExtResource("1_susf5")
@@ -469,3 +479,5 @@ fourmi_zombie = NodePath("../..")
 [node name="AttackPlayer" type="Node" parent="StateMachine" unique_id=1997260351 node_paths=PackedStringArray("fourmi_zombie")]
 script = ExtResource("8_rlbcs")
 fourmi_zombie = NodePath("../..")
+
+[node name="Mort" type="Node" parent="StateMachine" unique_id=407587234]

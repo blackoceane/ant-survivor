@@ -3,8 +3,8 @@ class_name FourmiZombie
 
 @export var player : Player
 @export var fourmi_ami : FourmiAmi
-@export var distance_detection : float = 150.0   # l'enfant est repéré s'il est plus près que ça
-@export var distance_attaque : float = 55.0      # assez près pour mordre l'enfant (les collisions les gardent à ~47 px)
+@export var distance_detection : float = 100.0   # l'enfant est repéré s'il est plus près que ça
+@export var distance_attaque : float = 30.0      # assez près pour mordre l'enfant (les collisions les gardent à ~47 px)
 @export var vitesse : float = 50.0               # vitesse de poursuite
 @export var graines_max : int = 5                # nombre de graines avant d'être inconsciente
 

@@ -9,6 +9,7 @@ func enter():
 	if (fourmi_zombie.est_inconsciente()):
 		# Plus de 5 graines : elle tombe et ne se relève plus
 		fourmi_zombie.anim.play("die")
+		
 		fourmi_zombie.remove_from_group("zombies")   # la fourmi amie ne la compte plus comme ennemie
 	else:
 		fourmi_zombie.anim.play("stunned")
