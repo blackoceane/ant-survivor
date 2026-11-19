@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://pt38fg52qkn8"]
 
-[ext_resource type="PackedScene" path="res://niveaux/jardin.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cbj7wxvn5eqmu" path="res://niveaux/jardin.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://2ac0bwgjeva4" path="res://Player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://2bf5oeas5f0m" path="res://hud.tscn" id="2_hud"]
+[ext_resource type="PackedScene" path="res://Menus/pause_menu.tscn" id="3_pause"]
 
 [node name="world" type="Node2D" unique_id=1068572960]
 y_sort_enabled = true
@@ -14,3 +15,5 @@ position = Vector2(960, 1060)
 motion_mode = 1
 
 [node name="HUD" parent="." unique_id=1554871203 instance=ExtResource("2_hud")]
+
+[node name="PauseMenu" parent="." unique_id=2107341941 instance=ExtResource("3_pause")]

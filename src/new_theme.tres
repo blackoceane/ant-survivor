@@ -74,6 +74,24 @@ corner_radius_bottom_left = 12
 shadow_size = 4
 shadow_offset = Vector2(0, 4)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_remplie"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 0.8235294, 0.24705882, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piste"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.23137255, 0.12156863, 0.05490196, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [resource]
 Button/colors/font_color = Color(1, 0.95686275, 0.8392157, 1)
 Button/colors/font_hover_color = Color(1, 0.8235294, 0.24705882, 1)
@@ -85,4 +103,12 @@ Button/styles/focus = SubResource("StyleBoxFlat_amlv4")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_78ylj")
 Button/styles/normal = SubResource("StyleBoxFlat_i7eh4")
 Button/styles/pressed = SubResource("StyleBoxFlat_aggjg")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_remplie")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_remplie")
+HSlider/styles/slider = SubResource("StyleBoxFlat_piste")
+Label/colors/font_color = Color(1, 0.95686275, 0.8392157, 1)
+Label/colors/font_outline_color = Color(0.23137255, 0.12156863, 0.05490196, 1)
+Label/constants/outline_size = 6
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_amlv4")
 VBoxContainer/constants/separation = 12

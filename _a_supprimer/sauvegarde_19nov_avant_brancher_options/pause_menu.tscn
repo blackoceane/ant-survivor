@@ -1,0 +1,67 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Menus/pause_menu.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://6kd3134gk7a8" path="res://new_theme.tres" id="2_theme"]
+[ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="3_font"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_script")
+
+[node name="Voile" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme = ExtResource("2_theme")
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8235294, 0.24705882, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.59506667, 0.37600002, 0.5882353)
+theme_override_colors/font_outline_color = Color(0.23137255, 0.12156863, 0.05490196, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 48
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="ContinuerButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "CONTINUER"
+
+[node name="RecommencerButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "RECOMMENCER"
+
+[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "MENU PRINCIPAL"
+
+[node name="QuitterButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "QUITTER"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ContinuerButton" to="." method="_on_continuer_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RecommencerButton" to="." method="_on_recommencer_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitterButton" to="." method="_on_quitter_button_pressed"]
