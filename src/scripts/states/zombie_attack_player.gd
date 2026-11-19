@@ -18,5 +18,6 @@ func update(_delta: float) -> void:
 
 # La morsure est finie : on recommence à poursuivre l'enfant
 func _on_fini() -> void:
-	print("Morsure de l'enfant !")   # plus tard (B1) : fourmi_zombie.player.perdre_vie()
+	if fourmi_zombie.player != null:
+		fourmi_zombie.player.perdre_vie()   # 5 morsures = 1 cœur perdu
 	Transitioned.emit(self, "Poursuivre")

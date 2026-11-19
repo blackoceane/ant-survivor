@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://2bf5oeas5f0m"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1170424101]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2029425714]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1602272096]
+layout_mode = 2
+
+[node name="LigneVie" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1093034079]
+layout_mode = 2
+
+[node name="LabelCoeur" type="Label" parent="MarginContainer/VBoxContainer/LigneVie" unique_id=761129676]
+layout_mode = 2
+text = "♥♥♥♥♥"

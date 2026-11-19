@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" path="res://obstacles/pesticide.tscn" id="14_pbqp5"]
 [ext_resource type="PackedScene" uid="uid://dbf6kr3yrbo1y" path="res://fourmi_enemi.tscn" id="15_bk0dg"]
 [ext_resource type="PackedScene" uid="uid://dqhtv7liebwgw" path="res://fourmi_ami.tscn" id="15_sqabi"]
+[ext_resource type="PackedScene" path="res://lance_pierre_bonus.tscn" id="16_lancepierre"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ct4q"]
 texture = ExtResource("1_ojidk")
@@ -299,6 +300,7 @@ position = Vector2(930, 505)
 
 [node name="Fourmi_enemi2" parent="." unique_id=1206682388 instance=ExtResource("15_bk0dg")]
 position = Vector2(924, 519)
+objet_a_lacher = ExtResource("16_lancepierre")
 
 [node name="Fourmi_enemi3" parent="." unique_id=1164328634 instance=ExtResource("15_bk0dg")]
 position = Vector2(879, 523)

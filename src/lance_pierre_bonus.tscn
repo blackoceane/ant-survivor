@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/lance_pierre_bonus.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://8uvh0inw5rkf" path="res://assets/images/Lance-pierres pixel art en bois.png" id="2_image"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ramasser"]
+radius = 14.0
+
+[node name="LancePierreBonus" type="Area2D"]
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("2_image")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ramasser")

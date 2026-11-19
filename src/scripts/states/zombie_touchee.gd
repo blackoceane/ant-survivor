@@ -9,7 +9,7 @@ func enter():
 	if (fourmi_zombie.est_inconsciente()):
 		# Plus de 5 graines : elle tombe et ne se relève plus
 		fourmi_zombie.anim.play("die")
-		
+		fourmi_zombie.anim.animation_finished.connect(_on_mort)   # quand elle a fini de tomber
 		fourmi_zombie.remove_from_group("zombies")   # la fourmi amie ne la compte plus comme ennemie
 	else:
 		fourmi_zombie.anim.play("stunned")
@@ -28,3 +28,9 @@ func update(_delta: float) -> void:
 # Elle n'est plus étourdie : elle repart poursuivre l'enfant
 func _on_fini() -> void:
 	Transitioned.emit(self, "Poursuivre")
+
+# Elle a fini de tomber : on attend 1 seconde, puis elle disparaît du jeu
+func _on_mort() -> void:
+	await get_tree().create_timer(1.0).timeout
+	fourmi_zombie.lacher_objet()     # si elle a un objet (ex. Fourmi_enemi2 : le lance-pierre)
+	fourmi_zombie.queue_free()

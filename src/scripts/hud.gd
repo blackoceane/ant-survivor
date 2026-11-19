@@ -1,9 +1,12 @@
 extends CanvasLayer
 
 
-# TEST (à enlever à l'étape 4) : au lancement, on affiche 3 vies pour vérifier.
+# Au lancement, on trouve l'enfant et on écoute son signal vie_changee
 func _ready() -> void:
-	maj_vie(5)
+	var player = get_tree().current_scene.find_child("Player", true, false)
+	if player != null:
+		player.vie_changee.connect(maj_vie)
+		maj_vie(player.vie)
 
 
 # Met à jour les cœurs selon le nombre de vies restantes.
