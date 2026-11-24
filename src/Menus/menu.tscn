@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="2_asx6s"]
 [ext_resource type="Theme" uid="uid://6kd3134gk7a8" path="res://new_theme.tres" id="2_f371u"]
 [ext_resource type="AudioStream" uid="uid://d3b7q17wf16nk" path="res://assets/Sons/menu.mp3" id="5_6ex8j"]
+[ext_resource type="AudioStream" uid="uid://d3tm8l4tu2o2c" path="res://assets/Sons/kenney_interface-sounds/Audio/click_005.ogg" id="6_ecop0"]
 
 [node name="Menu" type="Control" unique_id=1146704821]
 layout_mode = 3
@@ -69,6 +70,10 @@ text = "QUITTER"
 stream = ExtResource("5_6ex8j")
 autoplay = true
 bus = &"Musique"
+
+[node name="MenuClic" type="AudioStreamPlayer" parent="." unique_id=322559376]
+stream = ExtResource("6_ecop0")
+bus = &"Effets"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

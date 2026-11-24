@@ -23,20 +23,27 @@ func basculer_pause() -> void:
 
 
 func _on_continuer_button_pressed() -> void:
+	$PauseClic.play()   # pas besoin d'attendre : rien n'est détruit, le menu est juste caché
 	basculer_pause()
 
 
 func _on_recommencer_button_pressed() -> void:
+	$PauseClic.play()
+	await $PauseClic.finished
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 
 func _on_menu_button_pressed() -> void:
 	get_tree().paused = false
+	$PauseClic.play()
+	await $PauseClic.finished
 	get_tree().change_scene_to_file("res://Menus/menu.tscn")
 
 
 func _on_quitter_button_pressed() -> void:
+	$PauseClic.play()
+	await $PauseClic.finished
 	get_tree().quit()
 
 
@@ -46,6 +53,8 @@ func _on_options_button_pressed() -> void:
 	options.name = "Options"
 	add_child(options)
 	$CenterContainer.visible = false
+	$PauseClic.play()
+	await $PauseClic.finished
 	options.tree_exited.connect(_on_options_fermees)
 
 

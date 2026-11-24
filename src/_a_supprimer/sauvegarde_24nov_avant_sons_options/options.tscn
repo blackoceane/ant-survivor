@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://vyxa8vmtwqu0"]
+
+[ext_resource type="Script" uid="uid://c0avgna4fmiso" path="res://Menus/options.gd" id="0_script"]
+[ext_resource type="Theme" uid="uid://6kd3134gk7a8" path="res://new_theme.tres" id="1_theme"]
+[ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="2_font"]
+[ext_resource type="AudioStream" uid="uid://d3tm8l4tu2o2c" path="res://assets/Sons/kenney_interface-sounds/Audio/click_005.ogg" id="4_xjvvv"]
+[ext_resource type="AudioStream" uid="uid://d3b7q17wf16nk" path="res://assets/Sons/menu.mp3" id="5_x4gnw"]
+
+[node name="Options" type="Control" unique_id=2011736920]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("0_script")
+
+[node name="Voile" type="ColorRect" parent="." unique_id=239558298]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.03, 0.01, 0.88)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1872465101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1842387924]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme = ExtResource("1_theme")
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=155262053]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8235294, 0.24705882, 1)
+theme_override_colors/font_shadow_color = Color(0.8, 0.59506667, 0.37600002, 0.5882353)
+theme_override_colors/font_outline_color = Color(0.23137255, 0.12156863, 0.05490196, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 48
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="LigneMusique" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=720616755]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/LigneMusique" unique_id=1410689871]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+text = "MUSIQUE"
+
+[node name="SliderMusique" type="HSlider" parent="CenterContainer/VBoxContainer/LigneMusique" unique_id=1125620166]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 100.0
+
+[node name="LigneEffets" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=145979432]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/LigneEffets" unique_id=1755591043]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+text = "EFFETS"
+
+[node name="SliderEffets" type="HSlider" parent="CenterContainer/VBoxContainer/LigneEffets" unique_id=1960766051]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 100.0
+
+[node name="MuetCheck" type="CheckBox" parent="CenterContainer/VBoxContainer" unique_id=451133320]
+layout_mode = 2
+text = "MUET (CTRL+M)"
+
+[node name="InstructionsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1320788611]
+layout_mode = 2
+text = "INSTRUCTIONS"
+
+[node name="Leaderboard" type="Button" parent="CenterContainer/VBoxContainer" unique_id=385270217]
+layout_mode = 2
+text = "LEARDERBOARD
+"
+
+[node name="RetourButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=389580727]
+layout_mode = 2
+text = "RETOUR"
+
+[node name="SonClic" type="AudioStreamPlayer" parent="." unique_id=120619520]
+stream = ExtResource("4_xjvvv")
+bus = &"Effets"
+
+[node name="OptionsButton" type="AudioStreamPlayer" parent="." unique_id=2034402248]
+stream = ExtResource("5_x4gnw")
+autoplay = true
+bus = &"Musique"
+
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/LigneMusique/SliderMusique" to="." method="_on_slider_musique_value_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/LigneEffets/SliderEffets" to="." method="_on_slider_effets_value_changed"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/MuetCheck" to="." method="_on_muet_check_toggled"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RetourButton" to="." method="_on_retour_button_pressed"]

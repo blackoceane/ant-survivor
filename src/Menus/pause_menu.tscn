@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bct4ytlhfsd08" path="res://Menus/pause_menu.gd" id="1_script"]
 [ext_resource type="Theme" uid="uid://6kd3134gk7a8" path="res://new_theme.tres" id="2_theme"]
 [ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="3_font"]
-[ext_resource type="AudioStream" uid="uid://d3b7q17wf16nk" path="res://assets/Sons/menu.mp3" id="4_v7yoa"]
+[ext_resource type="AudioStream" uid="uid://bfao6rjiyiyjd" path="res://assets/Sons/kenney_interface-sounds/Audio/select_001.ogg" id="5_rxubw"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=779128101]
 process_mode = 3
@@ -62,10 +62,9 @@ text = "MENU PRINCIPAL"
 layout_mode = 2
 text = "QUITTER"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=830396915]
-stream = ExtResource("4_v7yoa")
-autoplay = true
-bus = &"Musique"
+[node name="PauseClic" type="AudioStreamPlayer" parent="." unique_id=1083121699]
+stream = ExtResource("5_rxubw")
+bus = &"Effets"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ContinuerButton" to="." method="_on_continuer_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RecommencerButton" to="." method="_on_recommencer_button_pressed"]

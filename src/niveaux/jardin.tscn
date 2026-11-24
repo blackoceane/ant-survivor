@@ -349,7 +349,7 @@ shape = SubResource("RectangleShape2D_qtv2u")
 position = Vector2(1936, 576)
 shape = SubResource("RectangleShape2D_u48p7")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1109019897]
+[node name="MusiqueJardin" type="AudioStreamPlayer" parent="." unique_id=1109019897]
 stream = ExtResource("18_aotqc")
 autoplay = true
 bus = &"Musique"
