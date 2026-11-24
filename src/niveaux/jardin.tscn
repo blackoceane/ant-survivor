@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dbf6kr3yrbo1y" path="res://fourmi_enemi.tscn" id="15_bk0dg"]
 [ext_resource type="PackedScene" uid="uid://dqhtv7liebwgw" path="res://fourmi_ami.tscn" id="15_sqabi"]
 [ext_resource type="PackedScene" path="res://lance_pierre_bonus.tscn" id="16_lancepierre"]
+[ext_resource type="AudioStream" uid="uid://ccx5qlyoao5rl" path="res://assets/Sons/jardin.mp3" id="18_aotqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ct4q"]
 texture = ExtResource("1_ojidk")
@@ -347,3 +348,8 @@ shape = SubResource("RectangleShape2D_qtv2u")
 [node name="@CollisionShape2D@7" type="CollisionShape2D" parent="Bords" unique_id=1258645613]
 position = Vector2(1936, 576)
 shape = SubResource("RectangleShape2D_u48p7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1109019897]
+stream = ExtResource("18_aotqc")
+autoplay = true
+bus = &"Musique"

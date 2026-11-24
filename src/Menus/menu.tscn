@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1tqvqffyp476" path="res://Menus/Le jardin géant à l’heure dorée.png" id="1_tc4cd"]
 [ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="2_asx6s"]
 [ext_resource type="Theme" uid="uid://6kd3134gk7a8" path="res://new_theme.tres" id="2_f371u"]
+[ext_resource type="AudioStream" uid="uid://d3b7q17wf16nk" path="res://assets/Sons/menu.mp3" id="5_6ex8j"]
 
 [node name="Menu" type="Control" unique_id=1146704821]
 layout_mode = 3
@@ -63,6 +64,11 @@ text = "OPTIONS"
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=786105910]
 layout_mode = 2
 text = "QUITTER"
+
+[node name="MusiqueMenu" type="AudioStreamPlayer" parent="." unique_id=772049319]
+stream = ExtResource("5_6ex8j")
+autoplay = true
+bus = &"Musique"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
