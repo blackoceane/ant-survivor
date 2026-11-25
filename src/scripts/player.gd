@@ -2,7 +2,7 @@ extends GenericCharacter
 class_name Player
 
 signal vie_changee(vie: int)   # prévient le HUD quand la vie change
-
+signal mort
 @export var bullet_scene : PackedScene
 var shoot_interval : float = 1.0 / 3.0  # 3 graines par seconde au maximum
 var last_shot : float = 0.0             # Chronomètre pour le tir
@@ -43,4 +43,4 @@ func perdre_vie() -> void:
 		vie -= 1
 		vie_changee.emit(vie)           # le HUD enlève un cœur
 		if vie <= 0:
-			print("L'enfant n'a plus de vie !")   # plus tard (B2) : état Défaite
+			$StateMachine.on_child_transition($StateMachine.current_state, "Death") #état Défaite
