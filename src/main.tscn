@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://2ac0bwgjeva4" path="res://Player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://2bf5oeas5f0m" path="res://hud.tscn" id="2_hud"]
 [ext_resource type="PackedScene" path="res://Menus/pause_menu.tscn" id="3_pause"]
+[ext_resource type="PackedScene" path="res://Menus/game_over.tscn" id="4_gameover"]
 
 [node name="world" type="Node2D" unique_id=1068572960]
 y_sort_enabled = true
@@ -17,3 +18,7 @@ motion_mode = 1
 [node name="HUD" parent="." unique_id=1554871203 instance=ExtResource("2_hud")]
 
 [node name="PauseMenu" parent="." unique_id=2107341941 instance=ExtResource("3_pause")]
+
+[node name="GameOver" parent="." instance=ExtResource("4_gameover")]
+
+[connection signal="mort" from="Player" to="GameOver" method="afficher"]

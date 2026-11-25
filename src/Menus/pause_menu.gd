@@ -12,6 +12,8 @@ func _ready() -> void:
 # Quand on appuie sur P (action "pause"), on met en pause ou on reprend.
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
+		if get_tree().paused and not visible:
+			return   # le jeu est figé par autre chose (le Game Over) : P ne fait rien
 		basculer_pause()
 
 
