@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dnage2fclw8ph" path="res://scripts/states/player_attack.gd" id="5_attack"]
 [ext_resource type="PackedScene" uid="uid://ctm1itnxrvbja" path="res://bullet.tscn" id="6_bullet"]
 [ext_resource type="Script" uid="uid://6h57ded06jyt" path="res://player_death.gd" id="8_5ncpa"]
+[ext_resource type="AudioStream" uid="uid://b2y5xcccuicog" path="res://assets/Sons/kenney_interface-sounds/Audio/pluck_001.ogg" id="9_sontir"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
@@ -630,3 +631,7 @@ player = NodePath("../..")
 [node name="Death" type="Node" parent="StateMachine" unique_id=772740463 node_paths=PackedStringArray("player")]
 script = ExtResource("8_5ncpa")
 player = NodePath("../..")
+
+[node name="SonTir" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_sontir")
+bus = &"Effets"

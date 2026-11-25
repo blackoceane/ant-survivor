@@ -27,6 +27,7 @@ func shoot() -> void:
 	get_parent().add_child(b)                        # Ajouter le projectile à la même scène que le joueur
 	b.global_transform = $Muzzle.global_transform   # Positionner et orienter le projectile au niveau du Muzzle
 	last_shot = 0.0                                  # Réinitialiser le chronomètre après le tir
+	$SonTir.play()                                   # bruit d'élastique du lance-pierre
 
 # Appelée par le lance-pierre bonus quand l'enfant le ramasse : il tire plus souvent
 func ameliorer_lance_pierre() -> void:
