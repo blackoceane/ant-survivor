@@ -101,4 +101,5 @@ bus = &"Effets"
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/LigneMusique/SliderMusique" to="." method="_on_slider_musique_value_changed"]
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/LigneEffets/SliderEffets" to="." method="_on_slider_effets_value_changed"]
 [connection signal="toggled" from="CenterContainer/VBoxContainer/MuetCheck" to="." method="_on_muet_check_toggled"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/InstructionsButton" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RetourButton" to="." method="_on_retour_button_pressed"]

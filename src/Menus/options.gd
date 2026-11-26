@@ -1,5 +1,5 @@
 extends Control
-
+const SCENE_INSTRUCTIONS = preload("res://Menus/instructions.tscn")
 
 # À l'ouverture des Options, on remet les curseurs et la case MUET
 # comme le vrai son, qui est rangé dans l'AudioServer (lui n'est jamais détruit).
@@ -36,3 +36,17 @@ func _on_slider_effets_value_changed(value: float) -> void:
 func _on_slider_musique_value_changed(value: float) -> void:
 	var bus = AudioServer.get_bus_index("Musique")
 	AudioServer.set_bus_volume_db(bus, linear_to_db(value / 100.0))
+
+
+func _on_instructions_button_pressed() -> void:
+	var instructions = SCENE_INSTRUCTIONS.instantiate()
+	add_child(instructions)
+	$CenterContainer.visible = false
+	$SonClic.play()
+	await $SonClic.finished
+	instructions.tree_exited.connect(_on_instructions_fermees)
+
+
+# Quand les Options disparaissent (bouton RETOUR), on réaffiche nos boutons.
+func _on_instructions_fermees() -> void:
+	$CenterContainer.visible = true	
