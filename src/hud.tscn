@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2bf5oeas5f0m"]
 
 [ext_resource type="Script" uid="uid://brj4rx3g6vgn4" path="res://scripts/hud.gd" id="1_hud"]
+[ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="2_font"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1170424101]
 script = ExtResource("1_hud")
@@ -23,6 +24,15 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9, 0.1, 0.15, 1)
 text = "♥♥♥♥♥"
+
+[node name="LabelMission" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.95686275, 0.8392157, 1)
+theme_override_colors/font_outline_color = Color(0.23137255, 0.12156863, 0.05490196, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+text = "MISSION : SECOURIR LA FOURMI"
 
 [node name="LabelTemps" type="Label" parent="MarginContainer/VBoxContainer" unique_id=464897275]
 layout_mode = 2

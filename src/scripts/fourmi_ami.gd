@@ -1,6 +1,8 @@
 extends GenericCharacter
 class_name FourmiAmi
 
+signal secourue   # prévient le HUD quand la fourmi commence à suivre l'enfant
+
 @export var player : Player
 @export var distance_parler : float = 70.0   # l'enfant doit être aussi près pour que le dialogue commence
 @export var distance_suivre : float = 50.0   # elle s'arrête à cette distance de l'enfant

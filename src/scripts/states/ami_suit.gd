@@ -4,6 +4,10 @@ class_name AmiSuit
 @export var fourmi : FourmiAmi
 var move_speed := 90.0
 
+# Quand la fourmi commence à suivre l'enfant, elle est secourue : on prévient le HUD
+func enter():
+	fourmi.secourue.emit()
+
 func physics_update(_delta: float) -> void:
 	# Arrivée devant la porte : on s'arrête
 	if (fourmi.porte and fourmi.global_position.distance_to(fourmi.porte.global_position) < 60.0):
