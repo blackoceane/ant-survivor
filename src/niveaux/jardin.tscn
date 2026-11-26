@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://dbf6kr3yrbo1y" path="res://fourmi_enemi.tscn" id="15_bk0dg"]
 [ext_resource type="PackedScene" uid="uid://dqhtv7liebwgw" path="res://fourmi_ami.tscn" id="15_sqabi"]
 [ext_resource type="PackedScene" path="res://lance_pierre_bonus.tscn" id="16_lancepierre"]
+[ext_resource type="Script" uid="uid://copghr3p330cd" path="res://scripts/porte_grotte.gd" id="18_6hly1"]
 [ext_resource type="AudioStream" uid="uid://ccx5qlyoao5rl" path="res://assets/Sons/jardin.mp3" id="18_aotqc"]
+[ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="19_police"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ct4q"]
 texture = ExtResource("1_ojidk")
@@ -46,7 +48,7 @@ sources/0 = SubResource("TileSetAtlasSource_4ct4q")
 radius = 220.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vmua"]
-radius = 36.0
+radius = 48.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hg43"]
 size = Vector2(1984, 32)
@@ -288,7 +290,7 @@ position = Vector2(1150, 300)
 position = Vector2(1080, 330)
 
 [node name="Fourmiliere1" parent="Obstacles" unique_id=310140293 instance=ExtResource("13_cfhhf")]
-position = Vector2(1440, 200)
+position = Vector2(1440, 175)
 
 [node name="FlaquePesticide1" parent="Obstacles" unique_id=120837629 instance=ExtResource("14_pbqp5")]
 position = Vector2(1700, 330)
@@ -322,11 +324,28 @@ position = Vector2(930, 580)
 position = Vector2(-16, -54)
 shape = SubResource("CircleShape2D_cyghq")
 
-[node name="PorteFourmiliere" type="Area2D" parent="." unique_id=732408582]
+[node name="PorteFourmiliere" type="Area2D" parent="." unique_id=732408582 node_paths=PackedStringArray("fourmi")]
 position = Vector2(1440, 235)
+script = ExtResource("18_6hly1")
+fourmi = NodePath("../fourmi_ami")
 
 [node name="@CollisionShape2D@3" type="CollisionShape2D" parent="PorteFourmiliere" unique_id=968773971]
 shape = SubResource("CircleShape2D_4vmua")
+
+[node name="Message" type="Label" parent="PorteFourmiliere"]
+visible = false
+z_index = 10
+offset_left = -160.0
+offset_top = -235.0
+offset_right = 160.0
+offset_bottom = -205.0
+theme_override_colors/font_color = Color(1, 0.95686275, 0.8392157, 1)
+theme_override_colors/font_outline_color = Color(0.23137255, 0.12156863, 0.05490196, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("19_police")
+theme_override_font_sizes/font_size = 16
+text = "TU NE PEUX PAS LAISSER TON AMIE !"
+horizontal_alignment = 1
 
 [node name="Depart" type="Marker2D" parent="." unique_id=506944230]
 position = Vector2(950, 943)
@@ -353,3 +372,5 @@ shape = SubResource("RectangleShape2D_u48p7")
 stream = ExtResource("18_aotqc")
 autoplay = true
 bus = &"Musique"
+
+[connection signal="body_entered" from="PorteFourmiliere" to="PorteFourmiliere" method="_on_body_entered"]

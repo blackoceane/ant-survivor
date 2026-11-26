@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://h66oacrfstxm"]
+
+[ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="1_7wo6h"]
+
+[node name="grotte" type="Node2D" unique_id=651747099]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=919345172]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1792181272]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16862746, 0.101960786, 0.0627451, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=915133473]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 42.0
+offset_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_7wo6h")
+theme_override_font_sizes/font_size = 48
+text = "NIVEAU 2 : LA GROTTE"
+horizontal_alignment = 1
+vertical_alignment = 1

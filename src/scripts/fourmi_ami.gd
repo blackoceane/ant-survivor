@@ -1,6 +1,6 @@
 extends GenericCharacter
 class_name FourmiAmi
-
+# un signal annonce un événement, et la méthode qui y est connectée réagit.
 signal secourue   # prévient le HUD quand la fourmi commence à suivre l'enfant
 
 @export var player : Player
@@ -10,7 +10,7 @@ signal secourue   # prévient le HUD quand la fourmi commence à suivre l'enfant
 
 var touchee : bool = false        # vrai quand un zombie vient de la mordre
 var dialogue_fini : bool = false  # mis à vrai quand le texte est terminé
-
+var est_secourue : bool = false   # demandé si la fourmi est secourue 
 func _ready() -> void:
 	anim = $AnimatedSprite2D
 	anim.play("idle_down")

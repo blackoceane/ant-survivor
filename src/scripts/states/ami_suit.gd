@@ -6,6 +6,7 @@ var move_speed := 90.0
 
 # Quand la fourmi commence à suivre l'enfant, elle est secourue : on prévient le HUD
 func enter():
+	fourmi.est_secourue = true
 	fourmi.secourue.emit()
 
 func physics_update(_delta: float) -> void:

@@ -9,8 +9,8 @@ size = Vector2(177, 93)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_tex")
-offset = Vector2(0, -78)
+offset = Vector2(0, -53)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -42)
+position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_1")

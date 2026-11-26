@@ -1,0 +1,40 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Menus/fin_niveau.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="2_police"]
+[ext_resource type="AudioStream" path="res://assets/Sons/kenney_interface-sounds/Audio/confirmation_001.ogg" id="3_son"]
+
+[node name="FinNiveau" type="CanvasLayer"]
+process_mode = 3
+layer = 20
+script = ExtResource("1_script")
+
+[node name="Noir" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.8235294, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(0.23137255, 0.12156863, 0.05490196, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_police")
+theme_override_font_sizes/font_size = 48
+text = "NIVEAU 1 TERMINÉ !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinClic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_son")
+bus = &"Effets"
