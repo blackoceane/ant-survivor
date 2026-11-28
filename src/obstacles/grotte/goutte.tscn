@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dvl5u07i6ayts"]
+
+[ext_resource type="Texture2D" uid="uid://dy4il5qhv8bvs" path="res://assets/images/grotte/goutte.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(20, 9)
+
+[node name="Goutte" type="StaticBody2D" unique_id=1421550060]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=269570392]
+texture = ExtResource("1_tex")
+offset = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=41760135]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_1")
+disabled = true

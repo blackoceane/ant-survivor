@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c3lwep7f6h30u"]
+
+[ext_resource type="Texture2D" uid="uid://uh8obsbogvut" path="res://assets/images/grotte/cocons.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(38, 40)
+
+[node name="Cocons" type="StaticBody2D" unique_id=187018500]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2016082234]
+texture = ExtResource("1_tex")
+offset = Vector2(0, -19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1534483158]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_1")

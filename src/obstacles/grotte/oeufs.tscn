@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bst1tdflm482c"]
+
+[ext_resource type="Texture2D" uid="uid://b0jiph2l74c7y" path="res://assets/images/grotte/oeufs.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(38, 36.5)
+
+[node name="Oeufs" type="StaticBody2D" unique_id=1513865428]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1799653935]
+position = Vector2(-5, 1)
+texture = ExtResource("1_tex")
+offset = Vector2(0, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1065076582]
+position = Vector2(0, -15.75)
+shape = SubResource("RectangleShape2D_1")

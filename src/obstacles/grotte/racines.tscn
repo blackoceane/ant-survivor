@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://yw78lc2h7ngj"]
+
+[ext_resource type="Texture2D" uid="uid://412mgsana5h0" path="res://assets/images/grotte/racines.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(44, 51)
+
+[node name="Racines" type="StaticBody2D" unique_id=1062506198]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=808693235]
+texture = ExtResource("1_tex")
+offset = Vector2(0, -28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1511310476]
+position = Vector2(1, -29.5)
+shape = SubResource("RectangleShape2D_1")

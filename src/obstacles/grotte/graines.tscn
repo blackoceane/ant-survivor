@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://df7vf3cui817v"]
+
+[ext_resource type="Texture2D" uid="uid://d0wejlg6pupyb" path="res://assets/images/grotte/graines.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(50, 39)
+
+[node name="Graines" type="StaticBody2D" unique_id=900419465]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=889093407]
+texture = ExtResource("1_tex")
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557145143]
+position = Vector2(0, -17.5)
+shape = SubResource("RectangleShape2D_1")

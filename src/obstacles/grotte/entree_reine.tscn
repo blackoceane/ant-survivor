@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d1as156flye15"]
+
+[ext_resource type="Texture2D" uid="uid://dyre7c7fodwx0" path="res://assets/images/grotte/entree_reine.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(76, 37)
+
+[node name="EntreeReine" type="StaticBody2D" unique_id=1576911896]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1477879673]
+texture = ExtResource("1_tex")
+offset = Vector2(0, -35)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2111074818]
+position = Vector2(1, -19)
+shape = SubResource("RectangleShape2D_1")

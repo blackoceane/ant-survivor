@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dq5o8ox2csisv"]
+
+[ext_resource type="Script" uid="uid://b6etcpshffd7m" path="res://acide.gd" id="1_metsw"]
+[ext_resource type="Texture2D" uid="uid://bvims3oy64bw2" path="res://assets/images/acide.png" id="1_xx3ic"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx3ic"]
+atlas = ExtResource("1_xx3ic")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_metsw"]
+atlas = ExtResource("1_xx3ic")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ags02"]
+atlas = ExtResource("1_xx3ic")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cq4fc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx3ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_metsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ags02")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dctbr"]
+size = Vector2(10, 8)
+
+[node name="acide" type="Node2D" unique_id=2147379847]
+script = ExtResource("1_metsw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=720642928]
+sprite_frames = SubResource("SpriteFrames_cq4fc")
+autoplay = "default"
+frame_progress = 0.017633054
+
+[node name="Area2D" type="Area2D" parent="." unique_id=454374532]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=92627641]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_dctbr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

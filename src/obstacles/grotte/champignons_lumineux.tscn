@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b2koss7n2xom2"]
+
+[ext_resource type="Texture2D" uid="uid://cr4gxv1qiycxi" path="res://assets/images/grotte/champignons_lumineux.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(31, 46.5)
+
+[node name="ChampignonsLumineux" type="StaticBody2D" unique_id=755130545]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=785567701]
+texture = ExtResource("1_tex")
+offset = Vector2(0, -21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1221163616]
+position = Vector2(0, -20.75)
+shape = SubResource("RectangleShape2D_1")

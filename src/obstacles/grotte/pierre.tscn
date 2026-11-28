@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bcvad3sruc7o0"]
+
+[ext_resource type="Texture2D" uid="uid://bfe01l881q2w4" path="res://assets/images/grotte/pierre.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(44, 53)
+
+[node name="Pierre" type="StaticBody2D" unique_id=889611882]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=774515169]
+position = Vector2(-1, 2)
+texture = ExtResource("1_tex")
+offset = Vector2(0, -23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1951775135]
+position = Vector2(0, -24.5)
+shape = SubResource("RectangleShape2D_1")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cbjqbomwrm32y"]
+
+[ext_resource type="Texture2D" uid="uid://b0ywn04k88k7n" path="res://assets/images/grotte/spores.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(33, 52)
+
+[node name="Spores" type="StaticBody2D" unique_id=1151602697]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1622454233]
+texture = ExtResource("1_tex")
+offset = Vector2(0, -19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=171340411]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_1")

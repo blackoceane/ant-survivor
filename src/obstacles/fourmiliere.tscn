@@ -1,16 +1,16 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://csi0j3pyswld3"]
 
-[ext_resource type="Texture2D" path="res://assets/images/jardin/fourmiliere.png" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://yari8b4wcuwi" path="res://assets/images/jardin/fourmiliere.png" id="1_tex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
 size = Vector2(177, 93)
 
-[node name="Fourmiliere" type="StaticBody2D"]
+[node name="Fourmiliere" type="StaticBody2D" unique_id=221289015]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=164080440]
 texture = ExtResource("1_tex")
 offset = Vector2(0, -53)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=68012630]
 position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_1")

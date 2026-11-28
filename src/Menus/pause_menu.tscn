@@ -8,6 +8,7 @@
 [node name="PauseMenu" type="CanvasLayer" unique_id=779128101]
 process_mode = 3
 layer = 10
+visible = false
 script = ExtResource("1_script")
 
 [node name="Voile" type="ColorRect" parent="." unique_id=1569156867]

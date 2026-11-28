@@ -1,32 +1,64 @@
 [gd_scene format=3 uid="uid://h66oacrfstxm"]
 
-[ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="1_7wo6h"]
+[ext_resource type="Script" uid="uid://cohlpwbekcydj" path="res://scripts/generation_grotte.gd" id="1_gen"]
+[ext_resource type="TileSet" uid="uid://cc3xt324j5p32" path="res://niveaux/tileset_grotte.tres" id="2_tileset"]
+[ext_resource type="FontFile" uid="uid://dfn10b7rfyy70" path="res://assets/font/LuckiestGuy-Regular.ttf" id="3_police"]
+[ext_resource type="PackedScene" uid="uid://2ac0bwgjeva4" path="res://Player.tscn" id="4_player"]
+[ext_resource type="PackedScene" uid="uid://2bf5oeas5f0m" path="res://hud.tscn" id="5_hud"]
+[ext_resource type="PackedScene" uid="uid://cudmqlr7beq82" path="res://Menus/pause_menu.tscn" id="6_pause"]
+[ext_resource type="PackedScene" path="res://Menus/game_over.tscn" id="7_gameover"]
 
-[node name="grotte" type="Node2D" unique_id=651747099]
+[node name="grotte" type="Node2D" unique_id=568786730]
+y_sort_enabled = true
+script = ExtResource("1_gen")
+nb_pas = 1200
+taille_max = 35
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=919345172]
+[node name="Fond" type="CanvasLayer" parent="." unique_id=1926098947]
+layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1792181272]
+[node name="ColorRect" type="ColorRect" parent="Fond" unique_id=1773254907]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.16862746, 0.101960786, 0.0627451, 1)
+color = Color(0.1, 0.06, 0.035, 1)
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=915133473]
+[node name="Sol" type="TileMapLayer" parent="." unique_id=1493635804]
+z_index = -1
+tile_set = ExtResource("2_tileset")
+
+[node name="Obstacles" type="Node2D" parent="." unique_id=1178576221]
+y_sort_enabled = true
+
+[node name="Player" parent="." unique_id=1514981873 instance=ExtResource("4_player")]
+motion_mode = 1
+
+[node name="HUD" parent="." unique_id=461035997 instance=ExtResource("5_hud")]
+
+[node name="PauseMenu" parent="." unique_id=1520350895 instance=ExtResource("6_pause")]
+
+[node name="GameOver" parent="." unique_id=863203632 instance=ExtResource("7_gameover")]
+
+[node name="Titre" type="CanvasLayer" parent="." unique_id=347096170]
+
+[node name="Label" type="Label" parent="Titre" unique_id=1864108618]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 42.0
-offset_right = 1.0
-offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_7wo6h")
+theme_override_colors/font_color = Color(1, 0.8235294, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(0.23137255, 0.12156863, 0.05490196, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_police")
 theme_override_font_sizes/font_size = 48
 text = "NIVEAU 2 : LA GROTTE"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1579478371]
+y_sort_enabled = true
+
+[connection signal="mort" from="Player" to="GameOver" method="afficher"]

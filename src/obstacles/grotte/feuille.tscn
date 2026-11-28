@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bj5rennbp1qtj"]
+
+[ext_resource type="Texture2D" uid="uid://clqd8fnfpywtf" path="res://assets/images/grotte/feuille.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(40, 11)
+
+[node name="FeuilleSeche" type="StaticBody2D" unique_id=597498721]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=595393486]
+texture = ExtResource("1_tex")
+offset = Vector2(0, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1466855539]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_1")
+disabled = true
